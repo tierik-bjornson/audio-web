@@ -13,8 +13,8 @@ const nav_list = [
 function NavList() {
   return(
     nav_list.map((item)=>(
-      <li>
-        <a href={item.navigate} className='nav-a'>
+      <li key={item.id}>
+        <a href={item.navigate} className='nav_a'>
           {item.name}
         </a>
       </li>
@@ -24,14 +24,14 @@ function NavList() {
 
 const Nav = () => {
   return (
-    <nav className='boxRow space-between'>
-      <div className='nav-logo'>
+    <nav className='boxRow space_between'>
+      <div className='nav_logo'>
         <img src={logo} alt={logo} />
       </div>
-      <ul className='boxRow space-3 nav-cardLink'>
+      <ul className='boxRow gap_3 nav_cardLink'>
         <NavList />
       </ul>
-      <div className='nav-cardIcon'>
+      <div className='nav_cardIcon'>
       <img src={cardLogo} alt={logo} />
       </div>
     </nav>
