@@ -69,11 +69,12 @@ h2 {
   letter-spacing: 10px;
   color: var(--color-white);
   opacity: 49.64%;
+  width: 100%;
 }
 
 .header-title {
   font-size: 56px;
-  line-height: 36px;
+  line-height: 58px;
   letter-spacing: 2px;
   color: var(--color-white);
 }
@@ -129,10 +130,20 @@ button:hover {
   justify-content: flex-start;
 }
 
+.selfLeft {
+  display: flex;
+  align-self: flex-start;
+}
+
 .right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+.selfRight {
+  display: flex;
+  align-self: flex-end;
 }
 
 .space-between {
