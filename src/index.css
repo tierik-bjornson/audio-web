@@ -1,0 +1,219 @@
+
+/* use https://fonts.google.com/ website for chose fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+    --color-orange: #D87D4A;
+    --color-orange-light: #FBAF85;
+    
+    --transition: all 400ms ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    /* display: none; */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-white);
+}
+
+
+/* ============ GENERAL STYLES =============  */
+
+.navBox {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 24px;
+  letter-spacing: .86px;
+  line-height: 25px;
+}
+
+.header-p {
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 10px;
+  color: var(--color-white);
+  opacity: 49.64%;
+}
+
+.header-title {
+  font-size: 56px;
+  line-height: 36px;
+  letter-spacing: 2px;
+  color: var(--color-white);
+}
+
+.header-body {
+  font-size: 16px;
+  line-height: 25px;
+  color: var(--color-white);
+  opacity: .75;
+}
+
+.text-body {
+  color: var(--color-white);
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.text-orange {
+  color: var(--color-orange);
+}
+
+a {
+    color: var(--color-white);
+    background-color: var(--color-orange);
+    padding: 1rem 3rem;
+    transition: var(--transition);
+}
+
+a:hover {
+    background-color: var(--color-orange-light);
+}
+
+button:hover {
+    color: var(--color-white);
+}
+
+.btn {
+    width: max-content;
+    display: inline-block;
+    color: var(--color-primary);
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--color-primary);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.btn:hover {
+    background: var(--color-white);
+    color: var(--color-bg);
+    border-color: transparent
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-bg);
+    width: max-content;
+    display: inline-block;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--color-primary);
+    transition: var(--transition);
+}
+
+.icon1-5 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+.icon1 {
+    color: var(--color-primary);
+    font-size: 1rem;
+}
+
+.smallTxt {
+    font-size: 0.7rem;
+    color: var(--color-light);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    width: 1rem;
+    height: 1rem;
+    border: 0.1rem solid var(--color-primary);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+.boxRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.boxColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ============= MEDIA QUERIES ( MEDIUM DEVICES ) ============== */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: var(--container-width-md);
+    }
+
+}
+
+
+/* ============= MEDIA QUERIES ( SMALL DEVICES ) ============== */
+@media screen and (max-width: 600px) {
+    .container {
+        width: var(--container-width-sm);
+    }
+
+    section > h2 {
+        margin-bottom: 2rem;
+    }
+
+}
