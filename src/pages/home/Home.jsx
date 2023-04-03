@@ -1,10 +1,15 @@
 import React from 'react'
 
+import Nav from '../../component/Nav'
+import HeaderBody from '../../component/HeaderBody'
+
 const Home = () => {
   return (
-    <div>
-      Home
-    </div>
+    <section id={'home'}>
+      <Nav />
+      <div className='underLine' />
+      <HeaderBody />
+    </section>
   )
 }
 
