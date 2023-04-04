@@ -44,6 +44,9 @@ function CardList({cat}) {
                 <div className='pcCard boxRow' key={item.id}>
                     <img src={item.img} alt={item.name} className='w_50 p_2' />
                     <div className='w_50 boxColumn gap_2 p_2 left'>
+                        {
+                            item.isNew && <p className='text_orange_overLine w_100'>NEW PRODUCT</p>
+                        }
                         <h1 className='text_h1 w_100'>{item.name}</h1>
                         <p className='opacity_50'>{item.desc}</p>
                         <Link to={'Product'} className='btn_orange selfLeft' >SEE PRODUCT</Link>
@@ -52,6 +55,9 @@ function CardList({cat}) {
             :
                 <div className='pcCard boxRow' key={item.id}>
                     <div className='w_50 boxColumn gap_2 p_2 left'>
+                        {
+                            item.isNew && <p className='text_orange_overLine w_100'>NEW PRODUCT</p>
+                        }
                         <h1 className='text_h1 w_100'>{item.name}</h1>
                         <p className='opacity_50'>{item.desc}</p>
                         <Link to={'Product'} className='btn_orange selfLeft' >SEE PRODUCT</Link>
@@ -64,7 +70,7 @@ function CardList({cat}) {
 
 const ProductCard = ({category_value}) => {
   return (
-    <section id="productCard" className='pl_5 pr_5'>
+    <section id="productCard" >
       <CardList cat={category_value}/>
     </section>
   )

@@ -100,7 +100,7 @@ nav {
 
 /* ------------------------- Home Album ------------------------- */
 #homeAlbum {
-
+    margin-bottom: 15rem;
 }
 
 .albumBoxFullOrange {
@@ -198,7 +198,7 @@ nav {
 /* ------------------------- Product Bringing ------------------------- */
 #productBringing {
     height: 35rem;
-    margin: 15rem 0;
+    margin-bottom: 15rem;
 }
 
 .pBLeft {

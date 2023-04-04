@@ -104,9 +104,9 @@ h2 {
 
 .text_h1 {
   font-size: 40px;
-  line-height: 44px;
-  letter-spacing: 1.5px;
-  font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
 }
 
 .text_body_white {
@@ -118,6 +118,13 @@ h2 {
 
 .text_orange {
   color: var(--color-orange);
+}
+
+.text_orange_overLine {
+  color: var(--color-orange);
+  font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 10px;
 }
 
 .text_gray {
