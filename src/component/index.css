@@ -1,4 +1,4 @@
-/* ----- nav ----- */
+/* ------------------------- nav ------------------------- */
 nav {
     padding: 2.5rem 5rem;
     background-color: var(--color-black);
@@ -28,7 +28,7 @@ nav {
 }
 
 
-/* ----- Header Body ----- */
+/* ------------------------- Header Body ------------------------- */
 .headerCard {
     width: 100%;
     height: 46rem;
@@ -51,7 +51,7 @@ nav {
     width: 70%;
 }
 
-/* ----- Category Card ----- */
+/* ------------------------- Category Card ------------------------- */
 #categoryCard {
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@ nav {
     margin-top: 5rem;
 }
 
-/* ----- Home Album ----- */
+/* ------------------------- Home Album ------------------------- */
 #homeAlbum {
 
 }
@@ -187,10 +187,10 @@ nav {
 }
 
 
-/* ----- Product Bringing ----- */
+/* ------------------------- Product Bringing ------------------------- */
 #productBringing {
     height: 35rem;
-    margin: 10rem 0;
+    margin: 15rem 0;
 }
 
 .pBLeft {
@@ -205,4 +205,13 @@ nav {
 .pBRightImg {
     border-radius: 10px;
     width: 100%;
+}
+
+
+/* ------------------------- Footer ------------------------- */
+#footer {
+    pad: 3rem 5rem;
+    width: 100%;
+    min-height: 15rem;
+    background-color: var(--color-black);
 }
