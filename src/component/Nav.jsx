@@ -1,22 +1,17 @@
 import React from 'react'
 import './index.css'
+import {Link} from 'react-router-dom'
 import logo from '../assets/logo/logo.svg'
 import cardLogo from '../assets/logo/card.svg'
-
-const nav_list = [
-  {id:1, name:"HOME", navigate:"/"},
-  {id:2, name:"HEADPHONES", navigate:"HeadPhones"},
-  {id:3, name:"SPEAKERS", navigate:"Speakers"},
-  {id:4, name:"EARPHONES", navigate:"EarPhones"},
-]
+import {nav_list} from '../data/Nav_List'
 
 function NavList() {
   return(
     nav_list.map((item)=>(
       <li key={item.id}>
-        <a href={item.navigate} className='nav_a'>
+        <Link to={item.navigate} className='nav_a'>
           {item.name}
-        </a>
+        </Link>
       </li>
     ))
   )

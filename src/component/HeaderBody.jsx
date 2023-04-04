@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import HeaderImg from '../assets/home/tablet/image-header.jpg'
 
-const HeaderBody = () => {
-  return (
+const pageUrl = window;
+
+function MainPageHeader() {
+  return(
     <div className='headerCard boxRow'>
       <div className='headerCard_text left boxColumn'>
         <p className='header_p'>NEW PRODUCT</p>
@@ -15,6 +17,28 @@ const HeaderBody = () => {
         <img src={HeaderImg} alt='HeadPhoneImage' />
       </div>
     </div>
+  )
+}
+
+function ChildPageHeader({header}) {
+  return(
+    <div className='headerCardChild center'>
+      <h1 className='header_title_child'>
+        {header}
+      </h1>
+    </div>
+  )
+}
+
+const HeaderBody = () => {
+  const location = useLocation()
+  return (
+    location.pathname === '/' || 'null'?
+
+        <ChildPageHeader header={location.pathname}/>
+      :
+        <ChildPageHeader header={"a"}/>
+     
   )
 }
 

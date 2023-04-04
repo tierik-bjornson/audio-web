@@ -80,6 +80,13 @@ h2 {
   color: var(--color-white);
 }
 
+.header_title_child {
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.5px;
+  color: var(--color-white);
+}
+
 .header_body {
   font-size: 16px;
   line-height: 25px;
@@ -92,6 +99,13 @@ h2 {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 1.13px;
+  font-weight: 700;
+}
+
+.text_body_white {
+  color: var(--color-white);
+  font-size: 16px;
+  line-height: 25px;
   font-weight: 700;
 }
 
@@ -210,6 +224,14 @@ h2 {
   padding-right: 5rem;
 }
 
+.w_50 {
+  width: 50%;
+}
+
+.w_100 {
+  width: 100%;
+}
+
 .space_between {
   justify-content: space-between;
 }
@@ -237,14 +259,17 @@ h2 {
 }
 
 .gap_1 {
+  display: flex;
   gap: 1rem;
 }
 
 .gap_2 {
+  display: flex;
   gap: 2rem;
 }
 
 .gap_3 {
+  display: flex;
   gap: 3rem;
 }
 

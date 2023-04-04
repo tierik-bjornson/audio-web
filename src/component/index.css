@@ -8,6 +8,7 @@ nav {
     font-size: 13px;
     line-height: 25px;
     letter-spacing: 2px;
+    font-weight: 700;
     color:var(--color-white)
 }
 
@@ -36,6 +37,13 @@ nav {
     background-color: var(--color-black);
     padding: 5rem 0 2.5rem 5rem;
     overflow: hidden;
+    border-top: 1px solid var(--color-white);
+}
+
+.headerCardChild {
+    height: 16rem;
+    background-color: var(--color-black);
+    border-top: 1px solid var(--color-white);
 }
 
 .headerCard_text {
@@ -210,8 +218,31 @@ nav {
 
 /* ------------------------- Footer ------------------------- */
 #footer {
-    pad: 3rem 5rem;
+    position: relative;
+    padding: 3rem 5rem;
     width: 100%;
-    min-height: 15rem;
+    min-height: 20rem;
     background-color: var(--color-black);
+    display: grid;
+    gap: 3rem;
+}
+
+.footerUnderLine {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 5rem;
+    width: 6rem;
+    border: 2px solid var(--color-orange);
+}
+
+.img_socials {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 5px;
+}
+
+.img_socials:hover {
+    /* background-color: var(--color-orange); */
+    opacity: .75;
 }
