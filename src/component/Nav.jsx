@@ -9,7 +9,7 @@ function NavList() {
   return(
     nav_list.map((item)=>(
       <li key={item.id}>
-        <Link to={item.navigate} className='nav_a'>
+        <Link to={item.navigate} state={{ pageName: item.navigate }} className='nav_a'>
           {item.name}
         </Link>
       </li>

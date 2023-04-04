@@ -246,3 +246,8 @@ nav {
     /* background-color: var(--color-orange); */
     opacity: .75;
 }
+
+/* ------------------------- Product Card ------------------------- */
+.pcCard {
+    margin-top: 10rem;
+}

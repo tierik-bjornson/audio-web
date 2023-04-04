@@ -2,8 +2,6 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import HeaderImg from '../assets/home/tablet/image-header.jpg'
 
-const pageUrl = window;
-
 function MainPageHeader() {
   return(
     <div className='headerCard boxRow'>
@@ -31,13 +29,12 @@ function ChildPageHeader({header}) {
 }
 
 const HeaderBody = () => {
-  const location = useLocation()
+  let { state } = useLocation();
   return (
-    location.pathname === '/' || 'null'?
-
-        <ChildPageHeader header={location.pathname}/>
+    state.pageName === '/'?
+        <MainPageHeader/>
       :
-        <ChildPageHeader header={"a"}/>
+        <ChildPageHeader header={state.pageName}/>
      
   )
 }

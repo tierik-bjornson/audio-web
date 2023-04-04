@@ -102,6 +102,13 @@ h2 {
   font-weight: 700;
 }
 
+.text_h1 {
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
 .text_body_white {
   color: var(--color-white);
   font-size: 16px;
@@ -111,13 +118,6 @@ h2 {
 
 .text_orange {
   color: var(--color-orange);
-}
-
-.text_h1 {
-  font-size: 40px;
-  line-height: 44px;
-  letter-spacing: 1.5px;
-  font-weight: 700;
 }
 
 .text_gray {
@@ -139,7 +139,7 @@ h2 {
     width: max-content;
     color: var(--color-white);
     background-color: var(--color-orange);
-    padding: .8rem 2.5rem;
+    padding: .6rem 2rem;
     transition: var(--transition);
 }
 
@@ -222,6 +222,10 @@ h2 {
 
 .pr_5 {
   padding-right: 5rem;
+}
+
+.p_2 {
+  padding: 2rem;
 }
 
 .w_50 {
