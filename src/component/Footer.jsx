@@ -1,10 +1,9 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import logo from '../assets/logo/logo.svg'
 import facebook from '../assets/socials/facebook.svg'
 import twitter from '../assets/socials/twitter.svg'
 import instagram from '../assets/socials/instagram.svg'
-import {nav_list} from '../data/Nav_List'
+import NavLinks from './NavLinks'
 
 const socals_list = [
     {id:1, name:'facebook', img:facebook},
@@ -20,18 +19,6 @@ function Socals() {
     )
 }
 
-function NavList() {
-    return(
-        nav_list.map((item)=>(
-        <li key={item.id}>
-          <Link to={item.navigate} className='nav_a'>
-            {item.name}
-          </Link>
-        </li>
-      ))
-    )
-}
-
 const Footer = () => {
   return (
     <footer id='footer'>
@@ -39,7 +26,7 @@ const Footer = () => {
         <div className='boxRow space_between'>
             <img src={logo} alt='audiophile' />
             <ul className='boxRow gap_3'>
-                <NavList />
+                <NavLinks />
             </ul>
         </div>
 
