@@ -6,15 +6,15 @@ import img_earphone from '../assets/shared/desktop/image-category-thumbnail-earp
 import arrow_right from  '../assets/shared/desktop/icon-arrow-right.svg'
 
 const catItem = [
-    {id:1, name:'HEADPHONE', img:img_headphone, navigate:'HeadPhones'},
-    {id:2, name:'SPEAKERS', img:img_speaker, navigate:'Speakers'},
-    {id:3, name:'EARPHONES', img:img_earphone, navigate:'EarPhones'},
+    {id:1, name:'HEADPHONE', img:img_headphone, navigate:'/HEADPHONE'},
+    {id:2, name:'SPEAKERS', img:img_speaker, navigate:'/SPEAKERS'},
+    {id:3, name:'EARPHONES', img:img_earphone, navigate:'/EARPHONES'},
 ]
 
 function CatList() {
     return(
         catItem.map(item=>(
-            <Link to={item.navigate} className='categoryCard_box center boxColumn' key={item.id}>
+            <Link to={item.navigate} state={{ pageName: item.name }} className='categoryCard_box center boxColumn' key={item.id}>
                 <img src={item.img} alt={item.name}/>
                 <div className='gap_1 boxColumn center'>
                     <p className='text_body'>
