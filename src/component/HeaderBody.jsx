@@ -30,12 +30,12 @@ function ChildPageHeader({header}) {
 
 const HeaderBody = () => {
   let { state } = useLocation();
+  console.log(state.pageName&&state.pageName)
   return (
-    state.pageName === '/'?
+    state.pageName === '/' || undefined?
         <MainPageHeader/>
       :
         <ChildPageHeader header={state.pageName}/>
-     
   )
 }
 
