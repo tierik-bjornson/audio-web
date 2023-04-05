@@ -1,10 +1,23 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import Nav from '../../component/Nav'
+import HeaderBody from '../../component/HeaderBody';
+import ProductCard from '../../component/ProductCard';
+import CategoryCard from '../../component/CategoryCard'
+import ProductBringing from '../../component/ProductBringing'
+import Footer from '../../component/Footer'
+
 const Speakers = () => {
   return (
-    <Link to={'/'}>
-      speakers
-    </Link>
+    <div>
+      <Nav />
+      <HeaderBody />
+      <div className='pl_5 pr_5'>
+        <ProductCard category_value='SPEAKERS'/>
+        <CategoryCard />
+        <ProductBringing />
+      </div>
+      <Footer />
+    </div>
   )
 }
 

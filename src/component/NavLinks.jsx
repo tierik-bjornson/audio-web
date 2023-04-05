@@ -8,7 +8,7 @@ const NavLinks = () => {
   return(
     nav_list.map((item)=>(
       <li key={item.id}>
-        <Link to={item.navigate} state={{ pageName: item.navigate }} preventScrollReset={false} className='nav_a'>
+        <Link to={item.navigate} state={{ pageName: item.name }} preventScrollReset={false} className='nav_a'>
           {item.name}
         </Link>
       </li>
