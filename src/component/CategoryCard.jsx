@@ -6,9 +6,9 @@ import img_earphone from '../assets/shared/desktop/image-category-thumbnail-earp
 import arrow_right from  '../assets/shared/desktop/icon-arrow-right.svg'
 
 const catItem = [
-    {id:1, name:'HEADPHONE', img:img_headphone, navigate:'/HEADPHONE'},
-    {id:2, name:'SPEAKERS', img:img_speaker, navigate:'/SPEAKERS'},
-    {id:3, name:'EARPHONES', img:img_earphone, navigate:'/EARPHONES'},
+    {id:1, name:'HEADPHONE', img:img_headphone, navigate:'/HeadPhones'},
+    {id:2, name:'SPEAKERS', img:img_speaker, navigate:'/Speakers'},
+    {id:3, name:'EARPHONES', img:img_earphone, navigate:'/EarPhones'},
 ]
 
 function CatList() {
