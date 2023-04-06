@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import pImg from '../assets/cart/image-xx59-headphones.jpg'
 
 const ProductDetail = () => {
     const [pCounter,setPCounter] = useState(1)
-    const navigate = useNavigate();
+    let location = useLocation();
 
     const handlerAdd = () => {
         setPCounter(pCounter + 1)
@@ -17,19 +17,19 @@ const ProductDetail = () => {
     return (
         <section id='productDetail'>
             <div className='w_100 left pt_1 pb_1'>
-                <Link to={navigate(-1)} className='btn_simle'>Go Back</Link>
+                <Link className='btn_simle'>Go Back</Link>
             </div>
             <div className='w_100 boxRow'>
-                <img className='pImg pr_2' src={pImg} alt='img'/>
+                <img className='pImg pr_2' src={location.state.img?location.state.img:pImg} alt={'product'}/>
                 <div className='w_50 boxColumn gap_3 p_6 pt_0 pb_0 left'>
                     <h1 className='text_h1 w_50 selfLeft'>
-                        XX59 HEADPHONES
+                        {location.state.name}
                     </h1>
                     <p className='opacity_50 w_100'>
-                        Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.
+                        {location.state.desc}
                     </p>
                     <p className='text_body w_100'>
-                        $ 899
+                        $ {Math.floor(Math.random() * 1000) + 1}
                     </p>
                     <div className='boxRow gap_1 left w_100'>
                         <div className='boxRow'>
