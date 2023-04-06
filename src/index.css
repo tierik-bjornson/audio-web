@@ -68,6 +68,9 @@ button {
   cursor: pointer;
 }
 
+img {
+  object-fit: cover;
+}
 .header_p {
   font-size: 14px;
   line-height: 19px;
@@ -183,6 +186,14 @@ button {
 .btn_transparent:hover {
   background-color: var(--color-black);
   color: var(--color-white);
+}
+
+.btn_simle {
+  color: var(--color-black);
+}
+
+.btn_simle:hover {
+  color: var(--color-orange);
 }
 
 .opacity_50 {

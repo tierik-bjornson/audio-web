@@ -71,7 +71,7 @@ nav {
 
 .categoryCard_box {
     background-color: var(--color-gray);
-    width: 22rem;
+    width: 23rem;
     height: 13rem;
     border-radius: .5rem;
     position: relative;
@@ -307,6 +307,19 @@ nav {
     /* height: 35.5rem; */
 }
 
-.pgImg3 {
-    
+/* ------------------------- Product May You Like ------------------------- */
+#ProductYMLike {
+    margin: 10rem 0;
+}
+
+.pYMLCard {
+    width: 32.4%;
+    height: max-content;
+}
+
+.pYMLCard > img {
+    border-radius: 10px;
+    background-color: var(--color-gray);
+    height: 20rem;
+    width: 100%;
 }

@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import pImg from '../assets/cart/image-xx59-headphones.jpg'
 
 const ProductDetail = () => {
     const [pCounter,setPCounter] = useState(1)
+    const navigate = useNavigate();
 
     const handlerAdd = () => {
         setPCounter(pCounter + 1)
@@ -15,7 +16,9 @@ const ProductDetail = () => {
 
     return (
         <section id='productDetail'>
-            <p className='w_100 left pt_1 pb_1'>Go Back</p>
+            <div className='w_100 left pt_1 pb_1'>
+                <Link to={navigate(-1)} className='btn_simle'>Go Back</Link>
+            </div>
             <div className='w_100 boxRow'>
                 <img className='pImg pr_2' src={pImg} alt='img'/>
                 <div className='w_50 boxColumn gap_3 p_6 pt_0 pb_0 left'>
