@@ -55,7 +55,7 @@ function CardList({cat}) {
                         }
                         <h1 className='text_h1 w_100'>{item.name}</h1>
                         <p className='opacity_50'>{item.desc}</p>
-                        <Link to={'/Product'} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+                        <Link to={'/Product'} state={{ name:item.name, desc:item.desc, img:item.img }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
                     </div>
                 </div>
             :
@@ -66,7 +66,7 @@ function CardList({cat}) {
                         }
                         <h1 className='text_h1 w_100'>{item.name}</h1>
                         <p className='opacity_50'>{item.desc}</p>
-                        <Link to={'/Product'} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+                        <Link to={'/Product'} state={{ name:item.name, desc:item.desc, img:item.img }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
                     </div>
                     <div className='right w_50'>
                         <img src={item.img} alt={item.name} className='pImg selfRight' />
