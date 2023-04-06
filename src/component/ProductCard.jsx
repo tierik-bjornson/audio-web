@@ -47,28 +47,30 @@ function CardList({cat}) {
     return(
         catValue.map((item,key)=>(
             key % 2 === 0?
-                <div className='pcCard boxRow' key={item.id}>
-                    <img src={item.img} alt={item.name} className='w_50 p_2' />
-                    <div className='w_50 boxColumn gap_2 p_2 left'>
+                <div className='pcCard boxRow w_100' key={item.id}>
+                    <img src={item.img} alt={item.name} className='pImg pr_2' />
+                    <div className='w_50 boxColumn gap_2 p_3 pt_0 pb_0 left'>
                         {
                             item.isNew && <p className='text_orange_overLine w_100'>NEW PRODUCT</p>
                         }
                         <h1 className='text_h1 w_100'>{item.name}</h1>
                         <p className='opacity_50'>{item.desc}</p>
-                        <Link to={'Product'} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+                        <Link to={'/Product'} className='btn_orange selfLeft' >SEE PRODUCT</Link>
                     </div>
                 </div>
             :
                 <div className='pcCard boxRow' key={item.id}>
-                    <div className='w_50 boxColumn gap_2 p_2 left'>
+                    <div className='w_50 boxColumn gap_2 pr_5 left'>
                         {
                             item.isNew && <p className='text_orange_overLine w_100'>NEW PRODUCT</p>
                         }
                         <h1 className='text_h1 w_100'>{item.name}</h1>
                         <p className='opacity_50'>{item.desc}</p>
-                        <Link to={'Product'} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+                        <Link to={'/Product'} className='btn_orange selfLeft' >SEE PRODUCT</Link>
                     </div>
-                    <img src={item.img} alt={item.name} className='w_50 p_2' />
+                    <div className='right w_50'>
+                        <img src={item.img} alt={item.name} className='pImg selfRight' />
+                    </div>
                 </div>
         ))
     )

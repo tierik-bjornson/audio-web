@@ -64,6 +64,10 @@ h2 {
   line-height: 25px;
 }
 
+button {
+  cursor: pointer;
+}
+
 .header_p {
   font-size: 14px;
   line-height: 19px;
@@ -201,9 +205,19 @@ h2 {
     justify-content: center;
 }
 
-.left {
+.vCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.hCenter {
   display: flex;
   align-items: center;
+}
+
+.left {
+  display: flex;
+  /* align-items: center; */
   justify-content: flex-start;
 }
 
@@ -223,16 +237,76 @@ h2 {
   align-self: flex-end;
 }
 
+.p_2 {
+  padding: 2rem;
+}
+
+.p_3 {
+  padding: 3rem;
+}
+
+.p_4 {
+  padding: 4rem;
+}
+
+.p_5 {
+  padding: 5rem;
+}
+
+.p_6 {
+  padding: 6rem;
+}
+
+.pt_0 {
+  padding-top: 0 !important;
+}
+
+.pt_1 {
+  padding-top: 1rem;
+}
+
+.pt_2 {
+  padding-top: 2rem;
+}
+
+.pb_0 {
+  padding-bottom: 0 !important;
+} 
+
+.pb_1 {
+  padding-bottom: 1rem;
+}
+
+.pb_2 {
+  padding-bottom: 2rem;
+}
+
+.pl_2 {
+  padding-left: 2rem;
+}
+
 .pl_5 {
   padding-left: 5rem;
+}
+
+.pr_2 {
+  padding-right: 2rem;
 }
 
 .pr_5 {
   padding-right: 5rem;
 }
 
-.p_2 {
-  padding: 2rem;
+.p_1 {
+  padding: 1rem;
+}
+
+.ml_25 {
+  margin-left: 2.5rem;
+}
+
+.mr_25 {
+  margin-right: 2.5rem;
 }
 
 .w_50 {
@@ -282,6 +356,10 @@ h2 {
 .gap_3 {
   display: flex;
   gap: 3rem;
+}
+
+.bgGray {
+  background-color: var(--color-gray);
 }
 
 .loader {
