@@ -189,6 +189,10 @@ button {
   opacity: .50;
 }
 
+.opacity_75 {
+  opacity: .75;
+}
+
 .icon1_5 {
     color: var(--color-primary);
     font-size: 1.5rem;
@@ -215,10 +219,22 @@ button {
   align-items: center;
 }
 
+.topLeft {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 .left {
   display: flex;
   /* align-items: center; */
   justify-content: flex-start;
+}
+
+.right {
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-end;
 }
 
 .selfLeft {
@@ -226,15 +242,14 @@ button {
   align-self: flex-start;
 }
 
-.right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
 .selfRight {
   display: flex;
   align-self: flex-end;
+}
+
+.selfTop {
+  display: flex;
+  align-self: flex-start;
 }
 
 .p_2 {

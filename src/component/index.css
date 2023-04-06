@@ -261,3 +261,15 @@ nav {
     
 }
 
+/* ------------------------- Product Features ------------------------- */
+#productFeatures {
+    margin-top: 10rem;
+}
+
+.pfLeft {
+    width: 60%;
+}
+
+.pfRight {
+    width: 40%;
+}
