@@ -12,7 +12,8 @@ export const CardProvider = ({ children }) => {
         cardCount,
         cardAdd: (count) => setCardCount(cardCount + count),
         cardSub: () => setCardCount(cardCount === 0 ? null : cardCount - 1),
-        addToCard: () => setCardItem({cardItem})
+        insertCardData: (data) => setCardItem({data}),
+        cardItem
       }}
     >
       {children}

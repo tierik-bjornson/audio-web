@@ -4,7 +4,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom'
 import pImg from '../assets/cart/image-xx59-headphones.jpg'
 
 const ProductDetail = () => {
-    const {cardAdd} = useCard();
+    const {cardAdd, insertCardData, cardItem} = useCard();
     const [pCounter,setPCounter] = useState(1)
     const [randonNumber,setRandonNumber] = useState(0)
 
@@ -20,7 +20,19 @@ const ProductDetail = () => {
 
     const handlerCardAdd = () => {
         cardAdd(pCounter)
+
+        const newCardItem = {...cardItem}
+        newCardItem.id = pCounter;
+        newCardItem.name = location.state.name;
+        newCardItem.desc = location.state.desc;
+        newCardItem.img = location.state.img?location.state.img:pImg;
+        newCardItem.count = pCounter;
+        insertCardData({newCardItem})
+        console.log(cardItem)
     }
+
+
+
 
     useEffect(()=> {
         setRandonNumber(Math.floor(Math.random() * 1000) + 1);
