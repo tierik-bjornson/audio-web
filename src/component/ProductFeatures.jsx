@@ -1,11 +1,5 @@
 import React from 'react'
-
-const inBoxArray = [
-    {id:1, x:'1', desc:'Headphone unit'},
-    {id:2, x:'2', desc:'Replacement earcups'},
-    {id:3, x:'1', desc:'User manual'},
-    {id:4, x:'1', desc:'3.5mm 5m audio cable'},
-]
+import {inBoxArray} from '../data/List'
 
 function InTheBox() {
     return(

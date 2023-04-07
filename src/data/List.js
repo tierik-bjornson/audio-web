@@ -44,3 +44,10 @@ export const product_speaker = [
 export const product_earphone = [
     {id:1, name:'YX1 WIRELESS EARPHONES', img:EARPHONES1, isNew:true, desc:'Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.'},
 ]
+
+export const inBoxArray = [
+    {id:1, x:'1', desc:'Headphone unit'},
+    {id:2, x:'2', desc:'Replacement earcups'},
+    {id:3, x:'1', desc:'User manual'},
+    {id:4, x:'1', desc:'3.5mm 5m audio cable'},
+]

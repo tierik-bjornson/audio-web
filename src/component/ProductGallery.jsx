@@ -7,8 +7,8 @@ const ProductGallery = () => {
   return (
     <section id={'productGallery'}>
         <img src={EARPHONES1} ali='img' className='pgImg pgItem1' />
-        <img src={SPEAKER2} ali='img' className='pgImg pgItem2' />
-        <img src={HEADPHONES3} ali='img' className='pgImg pgItem3' />
+        <img src={HEADPHONES3} ali='img' className='pgImg pgItem2' />
+        <img src={SPEAKER2} ali='img' className='pgImg pgItem3' />
     </section>
   )
 }
