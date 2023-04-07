@@ -164,6 +164,7 @@ img {
 
 .btn_orange {
     width: max-content;
+    max-height: 5rem;
     color: var(--color-white);
     background-color: var(--color-orange);
     padding: 1rem 2rem;
@@ -176,9 +177,10 @@ img {
 
 .btn_black {
   width: max-content;
+  max-height: 5rem;
   color: var(--color-white);
   background-color: var(--color-black);
-  padding: .7rem 2rem;
+  padding: 1rem 2rem;
   border: 2px solid transparent;
 }
 
@@ -190,9 +192,10 @@ img {
 
 .btn_transparent {
   width: max-content;
+  max-height: 5rem;
   color: var(--color-black);
   background-color: transparent;
-  padding: .7rem 2rem;
+  padding: 1rem 2rem;
   border: 2px solid var(--color-black);
 }
 

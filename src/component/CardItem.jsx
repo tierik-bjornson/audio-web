@@ -3,9 +3,16 @@ import {Link} from 'react-router-dom'
 import {useCard} from '../CardCotext'
 
 function CardList({cat}) {
-    const {cardItem} = useCard();
+    const {cardItem, insertCardData} = useCard();
 
-    console.log(cardItem)
+    const handlerAdd = (id) => {
+        // insertCardData(cardItem[id],{count:3})
+        console.log(cardItem[id].count)
+    }
+
+    const handlerSub = (id) => {
+        // setPCounter(pCounter > 1 ? pCounter - 1 : 1)
+    }
 
     return(
         cardItem.length > 0?
@@ -18,7 +25,14 @@ function CardList({cat}) {
                         }
                         <h1 className='text_h1 w_100'>{item.name}</h1>
                         <p className='opacity_50'>{item.desc}</p>
-                        <Link to={'/Product'} state={{ name:item.name, desc:item.desc, img:item.img }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+                        <div className='boxRow gap_1 left w_100 fleWrap'>
+                            <div className='boxRow'>
+                                <button className='p_1 bgGray' onClick={()=>handlerSub(item.id)}>-</button>
+                                <button className='p_1 bgGray'>{item.count}</button>
+                                <button className='p_1 bgGray' onClick={()=>handlerAdd(item.id)}>+</button>
+                            </div>
+                            <Link to={'/Product'} state={{ name:item.name, desc:item.desc, img:item.img }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+                        </div>
                     </div>
                 </div>
             ))
