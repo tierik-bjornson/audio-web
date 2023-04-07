@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
+import {useCard} from '../CardCotext';
 import {product_headphone, product_speaker, product_earphone} from '../data/List'
 
 function CardList({cat}) {
+    const {cardItem} = useCard();
     const [catValue,setCatValue] = useState([])
 
     useEffect(()=>{
@@ -16,12 +18,14 @@ function CardList({cat}) {
             case "EARPHONES":
                 setCatValue(product_earphone)
                 break;
-        
+            case "CARD":
+                setCatValue(cardItem)
+                break;
             default:
                 break;
         }
     },[cat])
-
+    
     return(
         catValue.map((item,key)=>(
             key % 2 === 0?

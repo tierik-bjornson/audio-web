@@ -4,7 +4,7 @@ const CardContext = createContext(undefined);
 
 export const CardProvider = ({ children }) => {
   const [cardCount, setCardCount] = useState(0);
-  const [cardItem, setCardItem] = useState([]);
+  const [cardItem, setCardItem] = useState([{id:'',name:'',desc:'', img:'', count:''}]);
 
   return (
     <CardContext.Provider

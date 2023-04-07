@@ -2,7 +2,9 @@
 import React,{useEffect, useState} from 'react';
 import './index.css'
 import { useCard } from '../CardCotext'
+import {Link} from 'react-router-dom'
 import NavLinks from './NavLinks'
+
 import logo from '../assets/logo/logo.svg'
 import drawerLogo from '../assets/drawer.svg'
 import cardLogo from '../assets/logo/card.svg'
@@ -44,7 +46,7 @@ const Nav = (props) => {
       <div className='nav_cardDrawer left p_1' onClick={handleDrawerToggle}>
         <img src={drawerLogo} alt={'Drawer'} />
       </div>
-      <div key={cardCount} className='nav_cardIcon right' style={window.location.hash==='#/Product' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
+      <Link key={cardCount} to={'/Card'} state={{ pageName: 'CARD' }} className='nav_cardIcon right' style={window.location.hash==='#/Product' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
         <img src={cardLogo} alt={'Card'} />
         {
           cardCount > 0 &&
@@ -52,7 +54,7 @@ const Nav = (props) => {
               <p className='text_small'>{cardCount}</p>
             </div>
         }
-      </div>
+      </Link>
       
       {/* ---- Show Drawer */}
       {
