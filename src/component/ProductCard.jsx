@@ -59,7 +59,7 @@ function CardList({cat}) {
                     </div>
                 </div>
             :
-                <div className='pcCard boxRow' key={item.id}>
+                <div className='pcCard boxRow pcCardReverse' key={item.id}>
                     <div className='w_50 boxColumn gap_2 pr_5 left'>
                         {
                             item.isNew && <p className='text_orange_overLine w_100'>NEW PRODUCT</p>

@@ -417,6 +417,30 @@ nav {
     opacity: .75;
 }
 
+@media screen and (max-width: 1024px) {
+    .footerLink {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .footerLink ul {
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .footerSocals {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footerSocals div {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* ------------------------- Product Card ------------------------- */
 .pcCard {
     margin-top: 10rem;
@@ -426,6 +450,35 @@ nav {
     width: 33rem;
 }
 
+@media screen and (max-width: 1024px) {
+    #productCard {
+        margin-bottom: 15rem;    
+    }
+    
+    .pcCard {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .pcCard > img {
+        width: 80%;
+        padding: 0;
+    }
+
+    .pcCard > div {
+        width: 80%;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .pcCard a {
+        align-self: center;
+    }
+
+    .pcCardReverse {
+        flex-direction: column-reverse;
+    }
+}
 /* ------------------------- Product Detail ------------------------- */
 #productDetail {
     

@@ -23,14 +23,14 @@ const Footer = () => {
   return (
     <footer id='footer'>
         <div className='footerUnderLine' />
-        <div className='boxRow space_between'>
+        <div className='boxRow space_between footerLink'>
             <img src={logo} alt='audiophile' />
             <ul className='boxRow gap_3'>
                 <NavLinks />
             </ul>
         </div>
 
-        <div className='gap_3'>
+        <div className='gap_3 footerSocals'>
             <div className='w_50 gap_3 boxColumn left'>
                 <p className='header_body opacity_50'>
                     Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.
