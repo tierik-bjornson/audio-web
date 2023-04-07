@@ -19,9 +19,9 @@ const ProductDetail = () => {
             <div className='w_100 left pt_1 pb_1'>
                 <Link className='btn_simle'>Go Back</Link>
             </div>
-            <div className='w_100 boxRow'>
-                <img className='pImg pr_2' src={location.state.img?location.state.img:pImg} alt={'product'}/>
-                <div className='w_50 boxColumn gap_3 p_6 pt_0 pb_0 left'>
+            <div className='w_100 boxRow pdCard'>
+                <img className='pDImg pr_2' src={location.state.img?location.state.img:pImg} alt={'product'}/>
+                <div className='pdDesc w_50 boxColumn gap_3 p_6 pt_0 pb_0 left'>
                     <h1 className='text_h1 w_50 selfLeft'>
                         {location.state.name}
                     </h1>
@@ -31,7 +31,7 @@ const ProductDetail = () => {
                     <p className='text_body w_100'>
                         $ {Math.floor(Math.random() * 1000) + 1}
                     </p>
-                    <div className='boxRow gap_1 left w_100'>
+                    <div className='boxRow gap_1 left w_100 fleWrap'>
                         <div className='boxRow'>
                             <button className='p_1 bgGray' onClick={handlerSub}>-</button>
                             <button className='p_1 bgGray'>{pCounter}</button>

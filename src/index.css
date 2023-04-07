@@ -158,7 +158,7 @@ img {
     width: max-content;
     color: var(--color-white);
     background-color: var(--color-orange);
-    padding: .6rem 2rem;
+    padding: .7rem 2rem;
     transition: var(--transition);
 }
 
@@ -170,7 +170,7 @@ img {
   width: max-content;
   color: var(--color-white);
   background-color: var(--color-black);
-  padding: .6rem 2rem;
+  padding: .7rem 2rem;
   border: 2px solid transparent;
 }
 
@@ -184,7 +184,7 @@ img {
   width: max-content;
   color: var(--color-black);
   background-color: transparent;
-  padding: .6rem 2rem;
+  padding: .7rem 2rem;
   border: 2px solid var(--color-black);
 }
 
@@ -432,8 +432,30 @@ img {
 
 }
 
-
 /* ============= MEDIA QUERIES ( SMALL DEVICES ) ============== */
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width: 900px) {
+  .boxRow_sm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .boxColumn_sm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
+/* ============= MEDIA QUERIES ( Extra SMALL DEVICES ) ============== */
+@media screen and (max-width: 600px) {
+  .selfLeft {
+    align-self: center;
+  }
+
+  .selfRight {
+    align-items: center;
+  }
+}
+
+

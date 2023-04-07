@@ -60,7 +60,7 @@ function CardList({cat}) {
                 </div>
             :
                 <div className='pcCard boxRow pcCardReverse' key={item.id}>
-                    <div className='w_50 boxColumn gap_2 pr_5 left'>
+                    <div className='w_50 boxColumn gap_2 p_3 pt_0 pb_0 left'>
                         {
                             item.isNew && <p className='text_orange_overLine w_100'>NEW PRODUCT</p>
                         }
@@ -68,9 +68,7 @@ function CardList({cat}) {
                         <p className='opacity_50'>{item.desc}</p>
                         <Link to={'/Product'} state={{ name:item.name, desc:item.desc, img:item.img }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
                     </div>
-                    <div className='right w_50'>
-                        <img src={item.img} alt={item.name} className='pImg selfRight' />
-                    </div>
+                    <img src={item.img} alt={item.name} className='pImg' />
                 </div>
         ))
     )
