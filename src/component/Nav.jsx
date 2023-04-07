@@ -1,6 +1,7 @@
 
 import React,{useEffect, useState} from 'react';
 import './index.css'
+import { useCard } from '../CardCotext'
 import NavLinks from './NavLinks'
 import logo from '../assets/logo/logo.svg'
 import drawerLogo from '../assets/drawer.svg'
@@ -9,6 +10,7 @@ import cardLogo from '../assets/logo/card.svg'
 const w = window.innerWidth;;
 
 const Nav = (props) => {
+  const { cardCount } = useCard();
   const [mobileOpen, setMobileOpen] = useState(false);
   
   const handleDrawerToggle = () => {
@@ -45,6 +47,12 @@ const Nav = (props) => {
       </div>
       <div className='nav_cardIcon right'>
         <img src={cardLogo} alt={'Card'} />
+        {
+          cardCount > 0 &&
+            <div className='center'>
+              <p className='text_small'>{cardCount}</p>
+            </div>
+        }
       </div>
       
       {/* ---- Show Drawer */}

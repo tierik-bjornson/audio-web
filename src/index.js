@@ -6,16 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import {HashRouter} from 'react-router-dom'
 import ScrollTop from './component/ScrollTop'
 
-import { ThemeProvider, useTheme } from "./ThemeContext";
+import { CardProvider } from "./CardCotext";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider>
+    <CardProvider>
       <HashRouter>
         <ScrollTop />
         <App />
       </HashRouter>
-    </ThemeProvider>
+    </CardProvider>
   </React.StrictMode>
 );
 

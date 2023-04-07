@@ -114,6 +114,14 @@ img {
   font-weight: 700;
 }
 
+.text_small {
+  color: var(--color-black);
+  font-size: 14px;
+  line-height: 0;
+  letter-spacing: 0;
+  font-weight: 900;
+}
+
 .text_h1 {
   font-size: 40px;
     line-height: 44px;
@@ -158,7 +166,7 @@ img {
     width: max-content;
     color: var(--color-white);
     background-color: var(--color-orange);
-    padding: .7rem 2rem;
+    padding: 1rem 2rem;
     transition: var(--transition);
 }
 

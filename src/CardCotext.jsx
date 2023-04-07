@@ -10,9 +10,9 @@ export const CardProvider = ({ children }) => {
     <CardContext.Provider
       value={{
         cardCount,
-        toggleAdd: () => setCardCount(cardCount + 1),
-        toggleSub: () => setCardCount(cardCount === 0 ? null : cardCount - 1),
-        addToCard: () => setCardItem(...cardItem)
+        cardAdd: (count) => setCardCount(cardCount + count),
+        cardSub: () => setCardCount(cardCount === 0 ? null : cardCount - 1),
+        // addToCard: () => setCardItem(...cardItem)
       }}
     >
       {children}

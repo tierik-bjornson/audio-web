@@ -1,12 +1,13 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import { useCard } from '../CardCotext'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import pImg from '../assets/cart/image-xx59-headphones.jpg'
 
 const ProductDetail = () => {
+    const {cardAdd} = useCard();
     const [pCounter,setPCounter] = useState(1)
+    const [randonNumber,setRandonNumber] = useState(0)
     let location = useLocation();
-    const navigate = useNavigate();
-
 
     const handlerAdd = () => {
         setPCounter(pCounter + 1)
@@ -15,6 +16,14 @@ const ProductDetail = () => {
     const handlerSub = () => {
         setPCounter(pCounter > 1 ? pCounter - 1 : 1)
     }
+
+    const handlerCardAdd = () => {
+        cardAdd(pCounter)
+    }
+
+    useEffect(()=> {
+        setRandonNumber(Math.floor(Math.random() * 1000) + 1);
+    },[])
 
     return (
         <section id='productDetail'>
@@ -31,7 +40,7 @@ const ProductDetail = () => {
                         {location.state.desc ? location.state.desc : 'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.'}
                     </p>
                     <p className='text_body w_100'>
-                        $ {Math.floor(Math.random() * 1000) + 1}
+                        $ {randonNumber}
                     </p>
                     <div className='boxRow gap_1 left w_100 fleWrap'>
                         <div className='boxRow'>
@@ -39,7 +48,7 @@ const ProductDetail = () => {
                             <button className='p_1 bgGray'>{pCounter}</button>
                             <button className='p_1 bgGray' onClick={handlerAdd}>+</button>
                         </div>
-                        <Link to={navigate(0)} className='btn_orange selfLeft' >ADD TO CART</Link>
+                        <button onClick={handlerCardAdd} className='btn_orange selfLeft' >ADD TO CART</button>
                     </div>
                 </div>
             </div>

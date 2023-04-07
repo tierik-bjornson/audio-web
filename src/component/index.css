@@ -14,6 +14,11 @@
     to {opacity: 1;}
 }
 
+@keyframes rotate_Animation {
+    0% {transform: rotate(45deg)}
+    50% {transform: rotate(0)}
+    100% {transform: rotate(-45deg)}
+}
 
 /* ------------------------- nav ------------------------- */
 nav {
@@ -47,6 +52,23 @@ nav {
 
 .cardIcon {
     width: 20%;
+}
+
+.nav_cardIcon {
+    padding: 1rem;
+    position: relative;
+    animation: rotate_Animation 1s linear 2 alternate;
+}
+
+.nav_cardIcon > div {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 10px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    opacity: .9;
 }
 
 .navDrawer {
@@ -85,10 +107,6 @@ nav {
 
     .nav_logo, .nav_cardLink {
         display: none;
-    }
-
-    .nav_cardIcon {
-        padding: 1rem;
     }
 
     .nav_cardIcon:hover {
