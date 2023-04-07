@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
-import {Link, useLocation} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 import pImg from '../assets/cart/image-xx59-headphones.jpg'
 
 const ProductDetail = () => {
     const [pCounter,setPCounter] = useState(1)
     let location = useLocation();
+    const navigate = useNavigate();
+
 
     const handlerAdd = () => {
         setPCounter(pCounter + 1)
@@ -26,7 +28,7 @@ const ProductDetail = () => {
                         {location.state.name}
                     </h1>
                     <p className='opacity_50 w_100'>
-                        {location.state.desc}
+                        {location.state.desc ? location.state.desc : 'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.'}
                     </p>
                     <p className='text_body w_100'>
                         $ {Math.floor(Math.random() * 1000) + 1}
@@ -37,7 +39,7 @@ const ProductDetail = () => {
                             <button className='p_1 bgGray'>{pCounter}</button>
                             <button className='p_1 bgGray' onClick={handlerAdd}>+</button>
                         </div>
-                        <Link to={'/Product'} className='btn_orange selfLeft' >ADD TO CART</Link>
+                        <Link to={navigate(0)} className='btn_orange selfLeft' >ADD TO CART</Link>
                     </div>
                 </div>
             </div>

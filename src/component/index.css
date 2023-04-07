@@ -575,6 +575,19 @@ nav {
     }
 
     .pfLeft {
+        width: 75%;
+        padding: 0;
+    }
+
+    .pfRight {
+        width: 75%;
+        padding: 0;
+        align-self: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pfLeft {
         width: 100%;
     }
 
@@ -645,4 +658,22 @@ nav {
     background-color: var(--color-gray);
     height: 20rem;
     width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    #ProductYMLike {
+        gap: 4rem;
+        margin: 15rem 0;
+    }
+
+    #ProductYMLike > div {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .pYMLCard {
+        width: 80%;
+        height: max-content;
+        gap: 1rem;
+    }
 }

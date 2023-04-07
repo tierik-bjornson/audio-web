@@ -30,7 +30,7 @@ const ProductFeatures = () => {
         </p>
       </div>
 
-      <div className='pfright boxColumn gap_1 selfTop'>
+      <div className='pfRight boxColumn gap_1 selfTop'>
         <h1 className='w_100'>IN THE BOX</h1>
         <InTheBox />
       </div>
