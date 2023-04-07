@@ -71,6 +71,11 @@ button {
 img {
   object-fit: cover;
 }
+
+.img_contain {
+  object-fit: contain;
+}
+
 .header_p {
   font-size: 14px;
   line-height: 19px;
@@ -327,6 +332,10 @@ img {
   padding: 1rem;
 }
 
+.mr_a {
+  margin: auto;
+}
+
 .ml_25 {
   margin-left: 2.5rem;
 }
@@ -386,6 +395,10 @@ img {
 
 .bgGray {
   background-color: var(--color-gray);
+}
+
+.borderB_2 {
+  border-bottom: 2px solid var(--color-white);
 }
 
 .loader {

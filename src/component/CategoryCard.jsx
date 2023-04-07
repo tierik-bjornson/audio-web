@@ -22,7 +22,7 @@ function CatList() {
                     </p>
                     <p className='text_gray'>
                         SHOP
-                        <img src={arrow_right} alt="Arrow Right"/>
+                        <img src={arrow_right} alt="Arrow Right" className='img_contain'/>
                     </p>
                 </div>
             </Link>
