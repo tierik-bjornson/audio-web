@@ -21,14 +21,14 @@ const ProductDetail = () => {
     const handlerCardAdd = () => {
         cardAdd(pCounter)
 
-        const newCardItem = {...cardItem}
+        const newCardItem = {}
         newCardItem.id = pCounter;
         newCardItem.name = location.state.name;
         newCardItem.desc = location.state.desc;
         newCardItem.img = location.state.img?location.state.img:pImg;
         newCardItem.count = pCounter;
-        insertCardData({newCardItem})
-        console.log(cardItem)
+
+        insertCardData(cardItem => [...cardItem, newCardItem])
     }
 
 
