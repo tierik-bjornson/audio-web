@@ -1,16 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import img_speaker from '../assets/home/desktop/image-speaker-zx9.png'
-import img_pattern_circles_lg from '../assets/home/desktop/pattern-circles-lg.svg'
-import img_speaker2 from '../assets/home/desktop/image-speaker-zx7.png'
-import img_earPhone from '../assets/home/desktop/image-earphones-yx1.jpg'
-
-const albumItem = [
-    {id:1, name:'ZX9 SPEAKER', img:img_speaker, navigate:'/Product', svg:img_pattern_circles_lg, desc:'Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.'},
-    {id:2, name:'ZX7 SPEAKER', img:img_speaker2, navigate:'/Product', svg:'', desc:''},
-    {id:3, name:'YX1 EARPHONES', img:img_earPhone, navigate:'/Product', svg:'', desc:''},
-]
-
+import {albumItem} from '../data/List'
 
 const HomeAlbum = () => {
   return (

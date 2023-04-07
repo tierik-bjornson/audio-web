@@ -1,15 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import img_headphone from '../assets/shared/desktop/image-category-thumbnail-headphones.png'
-import img_speaker from '../assets/shared/desktop/image-category-thumbnail-speakers.png'
-import img_earphone from '../assets/shared/desktop/image-category-thumbnail-earphones.png'
 import arrow_right from  '../assets/shared/desktop/icon-arrow-right.svg'
-
-const catItem = [
-    {id:1, name:'HEADPHONE', img:img_headphone, navigate:'/HeadPhones'},
-    {id:2, name:'SPEAKERS', img:img_speaker, navigate:'/Speakers'},
-    {id:3, name:'EARPHONES', img:img_earphone, navigate:'/EarPhones'},
-]
+import {catItem} from '../data/List'
 
 function CatList() {
     return(
