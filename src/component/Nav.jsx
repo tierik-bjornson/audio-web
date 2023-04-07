@@ -12,7 +12,7 @@ const w = window.innerWidth;;
 const Nav = (props) => {
   const { cardCount } = useCard();
   const [mobileOpen, setMobileOpen] = useState(false);
-  
+
   const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
   };
@@ -32,8 +32,7 @@ const Nav = (props) => {
       <div className='navDrawerRight' onClick={handleDrawerToggle}/>
     </div>
   );
-
-
+  
   return (
     <nav className='boxRow space_between'>
       <div className='nav_logo'>
@@ -45,7 +44,7 @@ const Nav = (props) => {
       <div className='nav_cardDrawer left p_1' onClick={handleDrawerToggle}>
         <img src={drawerLogo} alt={'Drawer'} />
       </div>
-      <div key={1} className='nav_cardIcon right'>
+      <div key={cardCount} className='nav_cardIcon right' style={window.location.hash==='#/Product' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
         <img src={cardLogo} alt={'Card'} />
         {
           cardCount > 0 &&

@@ -57,7 +57,6 @@ nav {
 .nav_cardIcon {
     padding: 1rem;
     position: relative;
-    animation: rotate_Animation .2s linear 2 alternate
 }
 
 .nav_cardIcon > div {
