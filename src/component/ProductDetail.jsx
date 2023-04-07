@@ -7,6 +7,7 @@ const ProductDetail = () => {
     const {cardAdd} = useCard();
     const [pCounter,setPCounter] = useState(1)
     const [randonNumber,setRandonNumber] = useState(0)
+
     let location = useLocation();
 
     const handlerAdd = () => {

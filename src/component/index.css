@@ -15,9 +15,9 @@
 }
 
 @keyframes rotate_Animation {
-    0% {transform: rotate(45deg)}
+    0% {transform: rotate(25deg)}
     50% {transform: rotate(0)}
-    100% {transform: rotate(-45deg)}
+    100% {transform: rotate(-25deg)}
 }
 
 /* ------------------------- nav ------------------------- */
@@ -57,7 +57,7 @@ nav {
 .nav_cardIcon {
     padding: 1rem;
     position: relative;
-    animation: rotate_Animation 1s linear 2 alternate;
+    animation: rotate_Animation .2s linear 2 alternate
 }
 
 .nav_cardIcon > div {

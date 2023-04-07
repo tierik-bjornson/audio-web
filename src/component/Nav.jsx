@@ -20,7 +20,7 @@ const Nav = (props) => {
   useEffect(()=>{
     w > 900 && setMobileOpen(false)
   },[mobileOpen])
-  
+
   const drawer = (
     <div className='navDrawer boxRow'>
       <div className='navDrawerLeft boxColumn top gap_1'>
@@ -45,7 +45,7 @@ const Nav = (props) => {
       <div className='nav_cardDrawer left p_1' onClick={handleDrawerToggle}>
         <img src={drawerLogo} alt={'Drawer'} />
       </div>
-      <div className='nav_cardIcon right'>
+      <div key={1} className='nav_cardIcon right'>
         <img src={cardLogo} alt={'Card'} />
         {
           cardCount > 0 &&
