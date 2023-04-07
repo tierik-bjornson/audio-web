@@ -6,14 +6,13 @@ import logo from '../assets/logo/logo.svg'
 import drawerLogo from '../assets/drawer.svg'
 import cardLogo from '../assets/logo/card.svg'
 
-const w = window.screen.width;
-const h = window.screen.height;
+const w = window.innerWidth;;
 
 const Nav = (props) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+      setMobileOpen(!mobileOpen);
   };
 
   useEffect(()=>{
@@ -50,7 +49,7 @@ const Nav = (props) => {
       
       {/* ---- Show Drawer */}
       {
-        mobileOpen && w < 900 && drawer
+        mobileOpen && drawer
       }
     </nav>
   )

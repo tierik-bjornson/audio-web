@@ -1,8 +1,24 @@
+/* ------------------------- Animations ------------------------- */
+@keyframes openDrawer_Animation {
+    from {width: 0;}
+    to {width: 22rem;}
+}
+
+@keyframes closeDrawer_Animation {
+    from {width: 22rem;}
+    to {width: 0;}
+}
+
+@keyframes opacity_Animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
 /* ------------------------- nav ------------------------- */
 nav {
     padding: 2.5rem 5rem;
     background-color: var(--color-black);
-    transition: var(--transition);
 }
 
 .nav_a {
@@ -43,10 +59,15 @@ nav {
 }
 
 .navDrawerLeft {
-    width: 15rem;
     height: 100%;
+    width: 22rem;
     background-color: var(--color-black);
     border-right: 2px solid var(--color-white);
+    animation: openDrawer_Animation 200ms ;
+}
+
+.navDrawerLeft > * {
+    animation: opacity_Animation 1000ms ;
 }
 
 .navDrawerRight {
@@ -677,3 +698,4 @@ nav {
         gap: 1rem;
     }
 }
+
