@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
-import {useCard} from '../CardCotext'
+import {useCart} from '../CartCotext'
 
-function CardList({cat}) {
-    const {cardItem, insertCardData} = useCard();
-    const [newCardItem, setNewCardItem] = useState([])
+function CartList({cat}) {
+    const {cartItem, insertCartData} = useCart();
+    const [newCartItem, setNewCartItem] = useState([])
 
     const handlerAdd = (id) => {
         // insertCardData(cardItem[id],{count:3})
@@ -43,9 +43,9 @@ function CardList({cat}) {
 // console.log(newCardItem)
     
     return(
-        cardItem.length > 0?
-            cardItem.map((item,key)=>(
-                <div className='CICard boxRow w_100 gap_3' key={key}>
+        cartItem.length > 0?
+            cartItem.map((item,key)=>(
+                <div className='CICart boxRow w_100 gap_3' key={key}>
                     <img src={item.img} alt={item.name} className='CICImg' />
                     <div className='boxColumn gap_1'>
                         {
@@ -66,17 +66,17 @@ function CardList({cat}) {
             ))
         :
             <div className='center p_5'>
-                <h1 className='text_h1 w_100'>Card Empty</h1>
+                <h1 className='text_h1 w_100'>Cart Empty</h1>
             </div>
     )
 } 
 
-const CardItem = ({category_value}) => {
+const CartItem = ({category_value}) => {
   return (
-    <section id="cardItem" >
-      <CardList />
+    <section id="cartItem" >
+      <CartList />
     </section>
   )
 }
 
-export default CardItem
+export default CartItem

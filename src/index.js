@@ -6,17 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import {HashRouter} from 'react-router-dom'
 import ScrollTop from './component/ScrollTop'
 
-import { CardProvider } from "./CardCotext";
+import { CartProvider } from "./CartCotext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CardProvider>
+    <CartProvider>
       <HashRouter>
         <ScrollTop />
         <App />
       </HashRouter>
-    </CardProvider>
+    </CartProvider>
   </React.StrictMode>
 );
 

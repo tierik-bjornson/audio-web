@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import { useCard } from '../CardCotext'
+import { useCart } from '../CartCotext'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import pImg from '../assets/cart/image-xx59-headphones.jpg'
 
 const ProductDetail = () => {
-    const {cardAdd, insertCardData, cardItem} = useCard();
+    const {cartAdd, insertCartData, cartItem} = useCart();
     const [pCounter,setPCounter] = useState(1)
     const [randonNumber,setRandonNumber] = useState(0)
 
@@ -18,19 +18,19 @@ const ProductDetail = () => {
         setPCounter(pCounter > 1 ? pCounter - 1 : 1)
     }
 
-    const handlerCardAdd = () => {
-        cardAdd(pCounter)
+    const handlerCartAdd = () => {
+        cartAdd(pCounter)
 
-        const newCardItem = {};
-        newCardItem.id = randonNumber;
-        newCardItem.pid = location.state.pid;
-        newCardItem.name = location.state.name;
-        newCardItem.desc = location.state.desc;
-        newCardItem.img = location.state.img?location.state.img:pImg;
-        newCardItem.count = pCounter;
-        newCardItem.price = randonNumber;
+        const newCartItem = {};
+        newCartItem.id = randonNumber;
+        newCartItem.pid = location.state.pid;
+        newCartItem.name = location.state.name;
+        newCartItem.desc = location.state.desc;
+        newCartItem.img = location.state.img?location.state.img:pImg;
+        newCartItem.count = pCounter;
+        newCartItem.price = randonNumber;
         
-        insertCardData((cardItem) => [...cardItem, newCardItem])
+        insertCartData((cartItem) => [...cartItem, newCartItem])
     }
 
     useEffect(()=> {
@@ -60,7 +60,7 @@ const ProductDetail = () => {
                             <button className='p_1 bgGray'>{pCounter}</button>
                             <button className='p_1 bgGray' onClick={handlerAdd}>+</button>
                         </div>
-                        <button onClick={handlerCardAdd} className='btn_orange selfLeft' >ADD TO CART</button>
+                        <button onClick={handlerCartAdd} className='btn_orange selfLeft' >ADD TO CART</button>
                     </div>
                 </div>
             </div>

@@ -1,20 +1,20 @@
 import React from 'react'
 import Nav from '../../component/Nav'
 import HeaderBody from '../../component/HeaderBody';
-import CardItem from '../../component/CardItem';
+import CartItem from '../../component/CartItem';
 import Footer from '../../component/Footer'
 
-const Card = () => {
+const Cart = () => {
   return (
     <div>
       <Nav />
       <HeaderBody />
       <div className='pl_5 pr_5'>
-        <CardItem />
+        <CartItem />
       </div>
       <Footer />
     </div>
   )
 }
 
-export default Card;
+export default Cart;

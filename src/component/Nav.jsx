@@ -1,18 +1,18 @@
 
 import React,{useEffect, useState} from 'react';
 import './index.css'
-import { useCard } from '../CardCotext'
+import { useCart } from '../CartCotext'
 import {Link} from 'react-router-dom'
 import NavLinks from './NavLinks'
 
 import logo from '../assets/logo/logo.svg'
 import drawerLogo from '../assets/drawer.svg'
-import cardLogo from '../assets/logo/card.svg'
+import cartLogo from '../assets/logo/card.svg'
 
 const w = window.innerWidth;;
 
 const Nav = (props) => {
-  const { cardItem, cardCount } = useCard();
+  const { cartItem, cartCount } = useCart();
   const [mobileOpen, setMobileOpen] = useState(false);
   
   const handleDrawerToggle = () => {
@@ -46,12 +46,12 @@ const Nav = (props) => {
       <div className='nav_cardDrawer left p_1' onClick={handleDrawerToggle}>
         <img src={drawerLogo} alt={'Drawer'} />
       </div>
-      <Link key={cardCount} to={'/Card'} state={{ pageName: 'CARD' }} className='nav_cardIcon right' style={window.location.hash==='#/Product' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
-        <img src={cardLogo} alt={'Card'} />
+      <Link key={cartCount} to={'/Cart'} state={{ pageName: 'CARt' }} className='nav_cardIcon right' style={window.location.hash==='#/Product' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
+        <img src={cartLogo} alt={'Cart'} />
         {
-          cardItem.length > 0 &&
+          cartItem.length > 0 &&
             <div className='center'>
-              <p className='text_small'>{cardItem.length}</p>
+              <p className='text_small'>{cartItem.length}</p>
             </div>
         }
       </Link>

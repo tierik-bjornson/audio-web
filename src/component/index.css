@@ -717,8 +717,8 @@ nav {
 }
 
 
-/* ------------------------- Card Item ------------------------- */
-.CICard {
+/* ------------------------- Cart Item ------------------------- */
+.CICart {
     padding: 2rem;
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
@@ -729,7 +729,7 @@ nav {
 }
 
 @media screen and (max-width: 800px) {
-    .CICard {
+    .CICart {
         flex-direction: column;
         gap: 1rem;
         padding: 0;
