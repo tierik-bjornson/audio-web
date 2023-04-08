@@ -21,18 +21,17 @@ const ProductDetail = () => {
     const handlerCardAdd = () => {
         cardAdd(pCounter)
 
-        const newCardItem = {}
-        newCardItem.id = pCounter;
+        const newCardItem = {};
+        newCardItem.id = randonNumber;
+        newCardItem.pid = location.state.pid;
         newCardItem.name = location.state.name;
         newCardItem.desc = location.state.desc;
         newCardItem.img = location.state.img?location.state.img:pImg;
         newCardItem.count = pCounter;
-
-        insertCardData(cardItem => [...cardItem, newCardItem])
+        newCardItem.price = randonNumber;
+        
+        insertCardData((cardItem) => [...cardItem, newCardItem])
     }
-
-
-
 
     useEffect(()=> {
         setRandonNumber(Math.floor(Math.random() * 1000) + 1);

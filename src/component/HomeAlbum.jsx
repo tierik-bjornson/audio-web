@@ -13,14 +13,14 @@ const HomeAlbum = () => {
         <div className='albumBoxFullOrangeRight boxColumn gap_2 left'>
             <h1 className='header_title'>{albumItem[0].name}</h1>
             <p className='header_body'>{albumItem[0].desc}</p>
-            <Link to={albumItem[0].navigate} state={{ name:albumItem[0].name, desc:albumItem[0].desc, img:albumItem[0].img }} className='btn_black selfLeft' >SEE PRODUCT</Link>
+            <Link to={albumItem[0].navigate} state={{ name:albumItem[0].name, desc:albumItem[0].desc, img:albumItem[0].img, pid:albumItem[0] }} className='btn_black selfLeft' >SEE PRODUCT</Link>
         </div>
       </div>
 
       <div className='albumBoxFullGray boxRow'>
         <div className='albumBoxFullGrayLeft gap_2'>
             <h1 className='text_title'>{albumItem[1].name}</h1>
-            <Link to={albumItem[1].navigate} state={{ name:albumItem[1].name, desc:albumItem[1].desc, img:albumItem[1].img }}  className='btn_transparent selfLeft' >SEE PRODUCT</Link>
+            <Link to={albumItem[1].navigate} state={{ name:albumItem[1].name, desc:albumItem[1].desc, img:albumItem[1].img, pid:albumItem[1] }}  className='btn_transparent selfLeft' >SEE PRODUCT</Link>
         </div>
         <div className='albumBoxFullGeayRightImg boxColumn gap_2'>
             <img src={albumItem[1].img} alt={albumItem[1].name} className='albumBoxFullOrangeRightImg'/>
@@ -33,7 +33,7 @@ const HomeAlbum = () => {
         </div>
         <div className='albumBoxHulfRight albumBoxHulfWidth boxColumn gap_2'>
             <h1 className='text_title'>{albumItem[2].name}</h1>
-            <Link to={albumItem[2].navigate} state={{ name:albumItem[2].name, desc:albumItem[2].desc, img:albumItem[2].img }} className='btn_transparent selfLeft' >SEE PRODUCT</Link>
+            <Link to={albumItem[2].navigate} state={{ name:albumItem[2].name, desc:albumItem[2].desc, img:albumItem[2].img, pid:albumItem[2] }} className='btn_transparent selfLeft' >SEE PRODUCT</Link>
         </div>
     </div>
     </section>

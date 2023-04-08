@@ -12,9 +12,9 @@ import cardLogo from '../assets/logo/card.svg'
 const w = window.innerWidth;;
 
 const Nav = (props) => {
-  const { cardCount } = useCard();
+  const { cardItem, cardCount } = useCard();
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  
   const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
   };
@@ -49,9 +49,9 @@ const Nav = (props) => {
       <Link key={cardCount} to={'/Card'} state={{ pageName: 'CARD' }} className='nav_cardIcon right' style={window.location.hash==='#/Product' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
         <img src={cardLogo} alt={'Card'} />
         {
-          cardCount > 0 &&
+          cardItem.length > 0 &&
             <div className='center'>
-              <p className='text_small'>{cardCount}</p>
+              <p className='text_small'>{cardItem.length}</p>
             </div>
         }
       </Link>

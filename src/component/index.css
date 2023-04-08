@@ -716,3 +716,23 @@ nav {
     }
 }
 
+
+/* ------------------------- Card Item ------------------------- */
+.CICard {
+    padding: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.CICImg {
+    width: 10rem;
+    height: 10rem;
+}
+
+@media screen and (max-width: 800px) {
+    .CICard {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+        padding: 2rem 0;
+    }
+}
