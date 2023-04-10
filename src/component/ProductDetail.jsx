@@ -4,37 +4,26 @@ import {Link, useLocation, useNavigate} from 'react-router-dom'
 import pImg from '../assets/cart/image-xx59-headphones.jpg'
 
 const ProductDetail = () => {
-    const {cartAdd, insertCartData, cartItem} = useCart();
-    const [pCounter,setPCounter] = useState(1)
+    const {addToCart, incCount, decCount, count} = useCart();
     const [randonNumber,setRandonNumber] = useState(0)
 
     let location = useLocation();
 
-    const handlerAdd = () => {
-        setPCounter(pCounter + 1)
-    }
-
-    const handlerSub = () => {
-        setPCounter(pCounter > 1 ? pCounter - 1 : 1)
-    }
-
     const handlerCartAdd = () => {
-        cartAdd(pCounter)
-
         const newCartItem = {};
-        newCartItem.id = randonNumber;
+        newCartItem.id = location.state.pid;
         newCartItem.pid = location.state.pid;
         newCartItem.name = location.state.name;
         newCartItem.desc = location.state.desc;
         newCartItem.img = location.state.img?location.state.img:pImg;
-        newCartItem.count = pCounter;
+        newCartItem.count = count;
         newCartItem.price = randonNumber;
-        
-        insertCartData((cartItem) => [...cartItem, newCartItem])
+        addToCart(newCartItem, count)
     }
 
     useEffect(()=> {
-        setRandonNumber(Math.floor(Math.random() * 1000) + 1);
+        setRandonNumber(200);
+        // setRandonNumber(Math.floor(Math.random() * 1000) + 1);
     },[])
 
     return (
@@ -56,9 +45,9 @@ const ProductDetail = () => {
                     </p>
                     <div className='boxRow gap_1 left w_100 fleWrap'>
                         <div className='boxRow'>
-                            <button className='p_1 bgGray' onClick={handlerSub}>-</button>
-                            <button className='p_1 bgGray'>{pCounter}</button>
-                            <button className='p_1 bgGray' onClick={handlerAdd}>+</button>
+                            <button className='p_1 bgGray' onClick={decCount}>-</button>
+                            <button className='p_1 bgGray'>{count}</button>
+                            <button className='p_1 bgGray' onClick={incCount}>+</button>
                         </div>
                         <button onClick={handlerCartAdd} className='btn_orange selfLeft' >ADD TO CART</button>
                     </div>
