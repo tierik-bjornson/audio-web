@@ -25,13 +25,13 @@ function CartList() {
                                         <button className='p_1 bgGray' onClick={() => toggleCartItemQuanitity(item.pid, "inc")}>+</button>
                                     </div>
                                     <h4 className=''>${item.price}</h4>
-                                    <button className='btn_transparent' onClick={() => onRemove(item)}>x</button>
+                                    <button className='btn_red center' onClick={() => onRemove(item)}>x</button>
                                 </div>
                             </div>
                         </div>
                     ))
                 }
-                <h2 className='center p_2'>
+                <h2 className='center pt_2 pb_2 w_100'>
                     total price: ${totalPrice}
                 </h2>
             </>

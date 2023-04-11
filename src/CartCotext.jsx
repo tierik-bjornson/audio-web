@@ -34,7 +34,7 @@ import { createContext, useContext, useState } from "react";
 const CartContext = createContext(undefined);
 
 export const CartProvider = ({ children }) => {
-  const [showCart, setShowCart] = useState(false);
+  // const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
@@ -56,7 +56,11 @@ export const CartProvider = ({ children }) => {
             ...item,
             count: item.count + count,
           };
-      });
+        else
+          return {
+            ...item
+          };
+        });
       setCartItems(updatedCartItems);
     } else {
       setCartItems([...cartItems, { ...product }]);
@@ -64,7 +68,7 @@ export const CartProvider = ({ children }) => {
     }
     setCount(1)
   };
-
+  
   const onRemove = (product) => {
     foundProduct = cartItems.find((item) => item.pid === product.pid);
     const newCartItems = cartItems.filter((item) => item.pid !== product.pid);
