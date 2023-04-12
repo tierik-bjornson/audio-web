@@ -4,7 +4,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom'
 import pImg from '../assets/cart/image-xx59-headphones.jpg'
 
 const ProductDetail = () => {
-    const {addToCart, incCount, decCount, count} = useCart();
+    const {addToCart, incCount, decCount, count, totalIPrice} = useCart();
     const [randonNumber,setRandonNumber] = useState(0)
 
     let location = useLocation();

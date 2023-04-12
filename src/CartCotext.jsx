@@ -37,6 +37,7 @@ export const CartProvider = ({ children }) => {
   // const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [totalIPrice, setTotalIPrice] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
   const [count, setCount] = useState(1);
   
@@ -48,7 +49,7 @@ export const CartProvider = ({ children }) => {
 
     setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * count);
     setTotalCount((prevTotalcount) => prevTotalcount + count);
-
+ 
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((item) => {
         if (item.pid === product.pid)
@@ -58,7 +59,7 @@ export const CartProvider = ({ children }) => {
           };
         else
           return {
-            ...item
+            ...item,
           };
         });
       setCartItems(updatedCartItems);
@@ -67,6 +68,7 @@ export const CartProvider = ({ children }) => {
       product.count = count;
     }
     setCount(1)
+    setTotalIPrice(0)
   };
   
   const onRemove = (product) => {

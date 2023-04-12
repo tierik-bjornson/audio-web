@@ -24,7 +24,7 @@ function CartList() {
                                         <button className='p_1 bgGray'>{item.count}</button>
                                         <button className='p_1 bgGray' onClick={() => toggleCartItemQuanitity(item.pid, "inc")}>+</button>
                                     </div>
-                                    <h4 className=''>${item.price}</h4>
+                                    <h4 className=''>${item.price * item.count}</h4>
                                     <button className='btn_red center' onClick={() => onRemove(item)}>x</button>
                                 </div>
                             </div>
