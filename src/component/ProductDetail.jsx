@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import { useCart } from '../CartCotext'
-import {Link, useLocation, useNavigate} from 'react-router-dom'
+import { useCart } from '../context/CartCotext'
+import { useLocation } from 'react-router-dom'
 import pImg from '../assets/cart/image-xx59-headphones.jpg'
 
 const ProductDetail = () => {
-    const {addToCart, incCount, decCount, count, totalIPrice} = useCart();
+    const {addToCart, incCount, decCount, count} = useCart();
     const [randonNumber,setRandonNumber] = useState(0)
 
     let location = useLocation();
@@ -29,7 +29,6 @@ const ProductDetail = () => {
     return (
         <section id='productDetail'>
             <div className='w_100 left pt_1 pb_1'>
-                <Link className='btn_simle'>Go Back</Link>
             </div>
             <div className='w_100 boxRow pdCard'>
                 <img className='pDImg pr_2' src={location.state.img?location.state.img:pImg} alt={'product'}/>

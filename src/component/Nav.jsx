@@ -1,7 +1,7 @@
 
 import React,{useEffect, useState} from 'react';
 import './index.css'
-import { useCart } from '../CartCotext'
+import { useCart } from '../context/CartCotext'
 import {Link} from 'react-router-dom'
 import NavLinks from './NavLinks'
 
@@ -18,10 +18,6 @@ const Nav = () => {
   const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
   };
-
-  useEffect(()=>{
-    w > 900 && setMobileOpen(false)
-  },[mobileOpen])
 
   const drawer = (
     <div className='navDrawer boxRow'>
@@ -46,7 +42,7 @@ const Nav = () => {
       <div className='nav_cardDrawer left p_1' onClick={handleDrawerToggle}>
         <img src={drawerLogo} alt={'Drawer'} />
       </div>
-      <Link key={totalCount} to={'/Cart'} state={{ pageName: 'CART' }} className='nav_cardIcon right' style={window.location.hash==='#/Product' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
+      <Link key={totalCount} to={'/Cart'} state={{ pageName: 'CART' }} className='nav_cardIcon right' style={window.location.hash==='#/Product/' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
         <img src={cartLogo} alt={'Cart'} />
         {
           cartItems.length > 0 &&

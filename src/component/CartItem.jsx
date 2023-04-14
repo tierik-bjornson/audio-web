@@ -1,7 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import {Link} from 'react-router-dom'
-import {useCart} from '../CartCotext'
-import pImg from '../assets/cart/image-xx59-headphones.jpg'
+import React from 'react'
+import {useCart} from '../context/CartCotext'
 
 function CartList() {
     const {cartItems, totalPrice, onRemove, toggleCartItemQuanitity} = useCart();

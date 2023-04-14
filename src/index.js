@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {HashRouter} from 'react-router-dom'
 import ScrollTop from './component/ScrollTop'
 
-import { CartProvider } from "./CartCotext";
+import { CartProvider } from "./context/CartCotext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

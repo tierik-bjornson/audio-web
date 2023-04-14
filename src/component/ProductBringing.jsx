@@ -13,7 +13,7 @@ const ProductBringing = () => {
         </p>
       </div>
       <div className='pBRight'>
-        <img className='pBRightImg' src={bestGearImg}/>
+        <img className='pBRightImg' src={bestGearImg} alt='bestGearImg'/>
       </div>
     </section>
   )

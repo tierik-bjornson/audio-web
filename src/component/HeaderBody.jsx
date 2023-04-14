@@ -15,7 +15,7 @@ function MainPageHeader() {
         <p className='header_p'>NEW PRODUCT</p>
         <h1 className='header_title'>{itemList.name}</h1>
         <p className='header_body'>{itemList.desc}</p>
-        <Link to={'/Product'} state={{ name:itemList.name, desc:itemList.desc, pid:2 }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+        <Link to={'/Product/'+itemList.name} state={{ name:itemList.name, desc:itemList.desc, pid:2 }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
       </div>
       <div className='headerCard_img center'>
         <img src={itemList.img} alt='HeadPhoneImage' />

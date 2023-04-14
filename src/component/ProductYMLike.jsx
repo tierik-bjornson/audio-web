@@ -5,10 +5,10 @@ import {product_headphone} from '../data/List'
 function PCardList() {
     return(
       product_headphone.map(item=>(
-        <div className='pYMLCard boxColumn gap_2' key={item.id}>
+        <div className='pYMLCard boxColumn gap_1' key={item.id}>
             <img src={item.img} alt={item.name} />
-            <h2>{item.name}</h2>
-            <Link to={'/Product'} state={{ name:item.name, desc:item.desc, img:item.img }} className='btn_orange' >ADD TO CART</Link>
+            <h2 className='w_100'>{item.name}</h2>
+            <Link to={'/Product/'+item.name} state={{ name:item.name, desc:item.desc, img:item.img, pid:item.id }} className='btn_orange' >ADD TO CART</Link>
         </div>
       ))
     )

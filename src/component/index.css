@@ -691,6 +691,12 @@ nav {
     height: max-content;
 }
 
+.pYMLCard > h2 {
+    height: 3rem;
+    overflow: hidden;
+    text-align: center;
+}
+
 .pYMLCard > img {
     border-radius: 10px;
     background-color: var(--color-gray);

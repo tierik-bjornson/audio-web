@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Nav from '../../component/Nav'
 import HeaderBody from '../../component/HeaderBody'
@@ -8,6 +8,9 @@ import ProductBringing from '../../component/ProductBringing'
 import Footer from '../../component/Footer'
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'My Page Title';
+  }, []);
   return (
     <section id={'home'}>
       <Nav />

@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
-import {useCart} from '../CartCotext';
 import {product_headphone, product_speaker, product_earphone} from '../data/List'
 
 function CardList({cat}) {
-    const {cartItem} = useCart();
     const [catValue,setCatValue] = useState([])
 
     useEffect(()=>{
@@ -17,9 +15,6 @@ function CardList({cat}) {
                 break;
             case "EARPHONES":
                 setCatValue(product_earphone)
-                break;
-            case "CART":
-                setCatValue(cartItem)
                 break;
             default:
                 break;
@@ -37,7 +32,7 @@ function CardList({cat}) {
                         }
                         <h1 className='text_h1 w_100'>{item.name}</h1>
                         <p className='opacity_50'>{item.desc}</p>
-                        <Link to={'/Product'} state={{ name:item.name, desc:item.desc, img:item.img, pid: item.id }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+                        <Link to={'/Product/'+item.name} state={{ name:item.name, desc:item.desc, img:item.img, pid: item.id }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
                     </div>
                 </div>
             :
@@ -48,7 +43,7 @@ function CardList({cat}) {
                         }
                         <h1 className='text_h1 w_100'>{item.name}</h1>
                         <p className='opacity_50'>{item.desc}</p>
-                        <Link to={'/Product'} state={{ name:item.name, desc:item.desc, img:item.img, pid: item.id }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+                        <Link to={'/Product/'+item.name} replace={true} state={{ name:item.name, desc:item.desc, img:item.img, pid: item.id }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
                     </div>
                     <img src={item.img} alt={item.name} className='pImg' />
                 </div>
