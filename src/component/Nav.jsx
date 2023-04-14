@@ -1,5 +1,5 @@
 
-import React,{useEffect, useState} from 'react';
+import React,{ useState} from 'react';
 import './index.css'
 import { useCart } from '../context/CartCotext'
 import {Link} from 'react-router-dom'
@@ -8,8 +8,6 @@ import NavLinks from './NavLinks'
 import logo from '../assets/logo/logo.svg'
 import drawerLogo from '../assets/drawer.svg'
 import cartLogo from '../assets/logo/card.svg'
-
-const w = window.innerWidth;;
 
 const Nav = () => {
   const { cartItems, totalCount } = useCart();
