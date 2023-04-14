@@ -42,7 +42,7 @@ const Nav = () => {
       <div className='nav_cardDrawer left p_1' onClick={handleDrawerToggle}>
         <img src={drawerLogo} alt={'Drawer'} />
       </div>
-      <Link key={totalCount} to={'/Cart'} state={{ pageName: 'CART' }} className='nav_cardIcon right' style={window.location.hash==='#/Product/' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
+      <Link key={totalCount} to={'/Cart'} state={{ pageName: 'CART' }} className='nav_cardIcon right' style={window.location.hash==='#/Product/:name' ? {animation: 'rotate_Animation .2s linear 2 alternate'}:{animation: 'none'}}>
         <img src={cartLogo} alt={'Cart'} />
         {
           cartItems.length > 0 &&
