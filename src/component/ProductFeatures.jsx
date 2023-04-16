@@ -1,4 +1,5 @@
 import React from 'react'
+import {motion} from 'framer-motion'
 import {inBoxArray} from '../data/List'
 
 function InTheBox() {
@@ -15,19 +16,31 @@ function InTheBox() {
 const ProductFeatures = () => {
   return (
     <section id={'productFeatures'} className='boxRow'>
-      <div className='pfLeft left boxColumn pr_5 gap_1'>
+      <motion.div 
+        className='pfLeft left boxColumn pr_5 gap_1'
+        initial={{opacity:0, x:-100}}
+        whileInView={{opacity:1, x:0}}
+        viewport={{ once: true }}
+        transition={{duration:1,}}
+      >
         <h1 className='w_100'>FEATURES</h1>
         <p className='w_100 opacity_75'>
             <span>These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.</span>
             <br/>
             <span>These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.</span>
         </p>
-      </div>
+      </motion.div>
 
-      <div className='pfRight boxColumn gap_1 selfTop'>
+      <motion.div 
+        className='pfRight boxColumn gap_1 selfTop'        
+        initial={{opacity:0, x:-100}}
+        whileInView={{opacity:1, x:0}}
+        viewport={{ once: true }}
+        transition={{duration:1,}}
+      >
         <h1 className='w_100'>IN THE BOX</h1>
         <InTheBox />
-      </div>
+      </motion.div>
     </section>
   )
 }

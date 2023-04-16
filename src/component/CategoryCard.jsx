@@ -1,12 +1,18 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {motion} from 'framer-motion'
 import arrow_right from  '../assets/shared/desktop/icon-arrow-right.svg'
 import {catItem} from '../data/List'
 
 function CatList() {
     return(
-        catItem.map(item=>(
-            <Link to={item.navigate} state={{ pageName: item.name }} className='categoryCard_box center boxColumn' key={item.id}>
+        catItem.map((item,key)=>(
+            <Link 
+                to={item.navigate} 
+                state={{ pageName: item.name }} 
+                className='categoryCard_box center boxColumn' 
+                key={item.id}
+            >
                 <img src={item.img} alt={item.name}/>
                 <div className='gap_1 boxColumn center'>
                     <p className='text_body'>
@@ -24,9 +30,15 @@ function CatList() {
 
 const CategoryCard = () => {
   return (
-    <section id='categoryCard'>
+    <motion.section 
+        id='categoryCard'
+        initial={{opacity: 0,scale: .9}}
+        whileInView={{opacity: 1, scale: 1}} 
+        transition={{duration:.4, delay:.2}}
+        viewport={{ once: true }}
+    >
       <CatList />
-    </section>
+    </motion.section>
   )
 }
 

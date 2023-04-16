@@ -84,11 +84,11 @@ nav {
     width: 22rem;
     background-color: var(--color-black);
     border-right: 2px solid var(--color-white);
-    animation: openDrawer_Animation 200ms ;
+    /* animation: openDrawer_Animation 200ms ; */
 }
 
 .navDrawerLeft > * {
-    animation: opacity_Animation 1000ms ;
+    /* animation: opacity_Animation 1000ms ; */
 }
 
 .navDrawerRight {
@@ -185,7 +185,6 @@ nav {
     height: 13rem;
     border-radius: .5rem;
     position: relative;
-    transition: var(--transition);
 }
 
 .underLine {
