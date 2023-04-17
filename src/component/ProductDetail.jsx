@@ -27,6 +27,14 @@ const ProductDetail = () => {
         // setRandonNumber(Math.floor(Math.random() * 1000) + 1);
     },[])
 
+    const handlerDecBtn = () => {
+        decCount();
+    }
+
+    const handlerIncBtn = () => {
+        incCount();
+    }
+    
     return (
         <section id='productDetail'>
             <div className='w_100 boxRow pdCard pt_2'>
@@ -42,7 +50,7 @@ const ProductDetail = () => {
                     className='pdDesc w_50 boxColumn gap_3 p_6 pt_0 pb_0 left'
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
-                    transition={{duration:1.4,}}
+                    transition={{duration:.6,}}
                 >
                     <h1 className='text_h1 w_50 selfLeft'>
                         {location.state.name}
@@ -54,10 +62,10 @@ const ProductDetail = () => {
                         $ {randonNumber}
                     </p>
                     <div className='boxRow gap_1 left w_100 fleWrap'>
-                        <div className='boxRow'>
-                            <button className='p_1 bgGray' onClick={decCount}>-</button>
-                            <button className='p_1 bgGray'>{count}</button>
-                            <button className='p_1 bgGray' onClick={incCount}>+</button>
+                        <div className='boxRow bgGray'>
+                            <button className='p_1' onClick={handlerDecBtn}>-</button>
+                            <button className='p_1'>{count}</button>
+                            <button className='p_1' onClick={handlerIncBtn}>+</button>
                         </div>
                         <button onClick={handlerCartAdd} className='btn_orange selfLeft' >ADD TO CART</button>
                     </div>

@@ -13,13 +13,13 @@ const ProductGallery = () => {
   return (
     <section id={'productGallery'}>
       {
-        list.map(item=>(
+        list.map((item,key)=>(
           <motion.img 
             key={item.id}
             initial={{opacity:0}} 
             whileInView={{opacity:1}} 
             viewport={{ once: true }} 
-            transition= {{delay:.2}}
+            transition= {{delay:key/4}}
             src={item.img} 
             alt={item.img} 
             className={`pgImg pgItem${item.id}`}

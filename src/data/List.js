@@ -31,9 +31,9 @@ export const albumItem = [
 ]
 
 export const product_headphone = [
-    {id:7, delay:.3, name:'XX59 HEADPHONES', img:HEADPHONES1,isNew:false, desc:'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.'},
-    {id:8, delay:.5, name:'XX99 MARK I HEADPHONES', img:HEADPHONES2,isNew:false, desc:'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.'},
-    {id:9, delay:.7, name:'XX99 MARK II HEADPHONES', img:HEADPHONES3, isNew:true, desc:'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.'},
+    {id:7, delay:.1, name:'XX59 HEADPHONES', img:HEADPHONES1,isNew:false, desc:'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.'},
+    {id:8, delay:.3, name:'XX99 MARK I HEADPHONES', img:HEADPHONES2,isNew:false, desc:'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.'},
+    {id:9, delay:.5, name:'XX99 MARK II HEADPHONES', img:HEADPHONES3, isNew:true, desc:'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.'},
 ]
 
 export const product_speaker = [

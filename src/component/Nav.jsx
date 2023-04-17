@@ -4,6 +4,7 @@ import './index.css'
 import { useCart } from '../context/CartCotext'
 import {Link} from 'react-router-dom'
 import NavLinks from './NavLinks'
+import { motion, AnimatePresence } from 'framer-motion'
 
 import logo from '../assets/logo/logo.svg'
 import drawerLogo from '../assets/drawer.svg'
@@ -18,17 +19,29 @@ const Nav = () => {
   };
 
   const drawer = (
-    <div className='navDrawer boxRow'>
-      <div className='navDrawerLeft boxColumn top gap_1'>
-        <div className='borderB_2 center p_1'>
-          <img src={logo} alt={'Logo'} />
-        </div>
-        <NavLinks />
-      </div>
-      <div className='navDrawerRight' onClick={handleDrawerToggle}/>
-    </div>
+    <AnimatePresence>
+      {
+        mobileOpen && (
+          <motion.div className='navDrawer boxRow'>
+            <motion.div 
+              key={'Drawer'}
+              className='navDrawerLeft boxColumn top gap_1'
+              initial={{ x: -100 }}
+              animate={{ x: 0 }}
+              exit={{ width: -100, opacity:0 }}
+            >
+              <div className='borderB_2 center p_1'>
+                <img src={logo} alt={'Logo'} />
+              </div>
+              <NavLinks animation={'run'}/>
+            </motion.div>
+            <motion.div className='navDrawerRight' onClick={handleDrawerToggle}/>
+          </motion.div>
+        )
+      }
+    </AnimatePresence>
   );
-  
+
   return (
     <nav className='boxRow space_between'>
       <div className='nav_logo'>
@@ -52,7 +65,7 @@ const Nav = () => {
       
       {/* ---- Show Drawer */}
       {
-        mobileOpen && drawer
+        drawer
       }
     </nav>
   )

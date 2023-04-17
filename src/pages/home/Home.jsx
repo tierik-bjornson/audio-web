@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
+import Spinner from '../../component/spinner/Spinner'
 import Nav from '../../component/Nav'
 import HeaderBody from '../../component/HeaderBody'
 import CategoryCard from '../../component/CategoryCard'
@@ -8,20 +9,28 @@ import ProductBringing from '../../component/ProductBringing'
 import Footer from '../../component/Footer'
 
 const Home = () => {
-  useEffect(() => {
-    document.title = 'My Page Title';
-  }, []);
+  const [showData,setShowData] = useState(false)
+
+  useEffect(()=>{
+    setTimeout(() => {
+      setShowData(true)
+    }, 500);
+  },[])
+  
   return (
-    <section id={'home'}>
-      <Nav />
-      <HeaderBody />
-      <div className='pl_5 pr_5'>
-        <CategoryCard />
-        <HomeAlbum />
-        <ProductBringing />
-      </div>
-      <Footer />
-    </section>
+    showData ?
+      <section id={'home'}>
+        <Nav />
+        <HeaderBody />
+        <div className='pl_5 pr_5'>
+          <CategoryCard />
+          <HomeAlbum />
+          <ProductBringing />
+        </div>
+        <Footer />
+      </section>
+    :
+      <Spinner />
   )
 }
 

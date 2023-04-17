@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion'
 import HeaderImg from '../assets/home/tablet/image-header.jpg'
 
 const itemList = {
@@ -8,17 +9,32 @@ const itemList = {
   img: HeaderImg
 }
 
+const variants = {
+  initial:{
+    opacity: 0,
+    y: -50
+  },
+  visible: (custom) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: custom }
+  })
+}
+
+
 function MainPageHeader() {
   return(
     <div className='headerCard boxRow'>
       <div className='headerCard_text left boxColumn'>
-        <p className='header_p'>NEW PRODUCT</p>
-        <h1 className='header_title'>{itemList.name}</h1>
-        <p className='header_body'>{itemList.desc}</p>
-        <Link to={'/Product/'+itemList.name} state={{ name:itemList.name, desc:itemList.desc, pid:2 }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+        <motion.p custom={.2} animate="visible" initial='initial' variants={variants} className='header_p'>NEW PRODUCT</motion.p>
+        <motion.h1 custom={.4} animate="visible" initial='initial' variants={variants} className='header_title'>{itemList.name}</motion.h1>
+        <motion.p custom={.6} animate="visible" initial='initial' variants={variants} className='header_body'>{itemList.desc}</motion.p>
+        <motion.div custom={.8} animate="visible" initial='initial' variants={variants} className={'w_100'}>
+          <Link to={'/Product/'+itemList.name} state={{ name:itemList.name, desc:itemList.desc, pid:2 }} className='btn_orange selfLeft' >SEE PRODUCT</Link>
+        </motion.div>
       </div>
       <div className='headerCard_img center'>
-        <img src={itemList.img} alt='HeadPhoneImage' />
+        <motion.img custom={0} animate="visible" initial='initial' variants={variants} src={itemList.img} alt='HeadPhoneImage' />
       </div>
     </div>
   )

@@ -26,10 +26,14 @@ function CardList({cat}) {
         catValue.map((item,key)=>(
             key % 2 === 0?
                 <motion.div 
-                    initial={{ opacity: 0.5, x: -50 }} 
+                    initial={{ opacity: 0, x: -50 }} 
                     whileInView={{ opacity: 1, x:0 }} 
                     viewport={{ once: true }}
-                    transition={{duration:1, type:'linner'}}
+                    transition={{
+                        duration:1, 
+                        delay:.4,
+                        opacity:{duration: .4}
+                    }}
                     className='pcCard boxRow w_100' 
                     key={item.id}
                 >

@@ -1,4 +1,6 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+
+import Spinner from '../../component/spinner/Spinner'
 import Nav from '../../component/Nav'
 import HeaderBody from '../../component/HeaderBody';
 import ProductCard from '../../component/ProductCard';
@@ -7,17 +9,28 @@ import ProductBringing from '../../component/ProductBringing'
 import Footer from '../../component/Footer'
 
 const HeadPhone = () => {
+  const [showData,setShowData] = useState(false)
+
+  useEffect(()=>{
+    setTimeout(() => {
+      setShowData(true)
+    }, 500);
+  },[])
+
   return (
-    <div>
-      <Nav />
-      <HeaderBody />
-      <div className='pl_5 pr_5'>
-        <ProductCard category_value='HEADPHONES'/>
-        <CategoryCard />
-        <ProductBringing />
+    showData ?
+      <div>
+        <Nav />
+        <HeaderBody />
+        <div className='pl_5 pr_5'>
+          <ProductCard category_value='HEADPHONES'/>
+          <CategoryCard />
+          <ProductBringing />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    :
+      <Spinner />
   )
 }
 
