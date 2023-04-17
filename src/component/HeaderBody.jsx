@@ -29,17 +29,9 @@ function MainPageHeader() {
         <motion.p custom={.2} animate="visible" initial='initial' variants={variants} className='header_p'>NEW PRODUCT</motion.p>
         <motion.h1 custom={.4} animate="visible" initial='initial' variants={variants} className='header_title'>{itemList.name}</motion.h1>
         <motion.p custom={.6} animate="visible" initial='initial' variants={variants} className='header_body'>{itemList.desc}</motion.p>
-        <motion.a 
-          to={'/Product/'+itemList.name} 
-          state={{ name:itemList.name, desc:itemList.desc, pid:2 }} 
-          className='btn_orange selfLeft' 
-          custom={.8} 
-          animate="visible" 
-          initial='initial' 
-          variants={variants}
-        > 
-          SEE PRODUCT
-        </motion.a>
+        <motion.div custom={.8} animate="visible" initial='initial' variants={variants} className={'selfLeft w_100'}>
+          <Link to={'/Product/'+itemList.name} state={{ name:itemList.name, desc:itemList.desc, pid:2 }} className='btn_orange center' >SEE PRODUCT</Link>
+        </motion.div>
       </div>
       <div className='headerCard_img center'>
         <motion.img custom={0} animate="visible" initial='initial' variants={variants} src={itemList.img} alt='HeadPhoneImage' />

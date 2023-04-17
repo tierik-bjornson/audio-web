@@ -165,7 +165,7 @@ nav {
     }
 
     .headerCard_text a {
-        align-self: center;
+        margin: auto;
     }
 }
 
