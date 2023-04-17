@@ -32,10 +32,10 @@ const CategoryCard = () => {
   return (
     <motion.section 
         id='categoryCard'
-        initial={{opacity: 0,scale: .9}}
+        initial={{opacity: 0,scale: .8}}
         whileInView={{opacity: 1, scale: 1}} 
-        transition={{duration:.4, delay:.2}}
-        viewport={{ once: true }}
+        transition={{duration:.4, delay:.4}}
+        // viewport={{ once: true }}
     >
       <CatList />
     </motion.section>
