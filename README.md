@@ -3,7 +3,7 @@ This Repo Contains a Audio Shopping WebSite Made Using Reactjs , Context And Fra
 
 
 ## Preview
-[amirhayati.github.io/Desert_Tour/](https://amirhayati.github.io/Audio_Shopping_WebSite/)
+[amirhayati.github.io/Audio_Shopping_WebSite/](https://amirhayati.github.io/Audio_Shopping_WebSite/)
 
 ## TechStack
 - Reactjs
