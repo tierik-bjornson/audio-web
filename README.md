@@ -16,7 +16,7 @@ This Repo Contains a Audio Shopping WebSite Made Using Reactjs , Context And Fra
 - Full Responsive 
 - Add Product To Cart
 - Edit Cart Item
-- Delete cart Item
+- Delete Cart Item
 
 ## How To Run
 1. Clone This Repo.
