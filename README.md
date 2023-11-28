@@ -1,5 +1,5 @@
 # E-Commerce Application using React.JS
-This Repo Contains a Audio Shopping WebSite Made Using Reactjs , Context And Framer Motion.
+This Repo Contains a Audio Shop WebSite Made Using Reactjs , Context And Framer Motion.
 
 
 ## Preview
