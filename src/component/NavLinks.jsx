@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const nav_list = [
-  {id:1, name:"HomeMadeMade", navigate:"/"},
+  {id:1, name:"HomePage", navigate:"/"},
   {id:2, name:"Headphones", navigate:"/HeadPhones"},
   {id:3, name:"Speak", navigate:"/Speakers"},
   {id:4, name:"Earphones", navigate:"/EarPhones"}
