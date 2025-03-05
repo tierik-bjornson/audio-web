@@ -33,7 +33,7 @@ const Footer = () => {
         <div className='gap_3 footerSocals'>
             <div className='w_50 gap_3 boxColumn left'>
                 <p className='header_body opacity_50'>
-                    jdkdsvksksjkfskjfkjsdfhksfkjsdfkjsd
+                 yeah yeah yeah 
                 </p>
                 <p className='text_body_white opacity_50 w_100'>
                     Copyright 2025. All Rights Reserved
