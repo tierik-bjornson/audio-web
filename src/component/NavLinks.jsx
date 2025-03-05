@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const nav_list = [
-  {id:1, name:"HOME", navigate:"/"},
-  {id:2, name:"HEADPHONES", navigate:"/HeadPhones"},
-  {id:3, name:"SPEAKERS", navigate:"/Speakers"},
-  {id:4, name:"EARPHONES", navigate:"/EarPhones"},
+  {id:1, name:"HOST", navigate:"/"},
+  {id:2, name:"NODE", navigate:"/HeadPhones"},
+  {id:3, name:"SPEAKER", navigate:"/Speakers"},
+  {id:4, name:"EARPHONE", navigate:"/EarPhones"},
 ]
 
 const NavLinks = ({animation}) => {
