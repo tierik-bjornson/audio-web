@@ -8,7 +8,9 @@ pipeline {
         PROJECT = 'lab-audio-web'
         IMAGE_NAME = 'audio-web'
         HARBOR_CREDS = 'harbor-credentials'
-        DOCKER_IMAGE = ''
+        DEPLOY_REPO = 'https://github.com/tierik-bjornson/audio-web-deploy.git'
+        DEPLOY_BRANCH = 'main'
+        DOCKER_IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
     stages {
         stage('Start') {
@@ -18,12 +20,12 @@ pipeline {
                 }
             }
         }
-        stage('Checkout') {
+        stage('Checkout Source Code') {
             steps {
                 script {
-                    echo "Đang clone repository..."
+                    echo "Đang clone repository source code..."
                     git url: 'https://github.com/tierik-bjornson/audio-web.git', branch: 'main'
-                    echo "Clone thành công!"
+                    echo "Clone source code thành công!"
                 }
             }
         }
@@ -58,21 +60,42 @@ pipeline {
             steps {
                 script {
                     echo "⚡ Bắt đầu build Docker image..."
-                    sh "docker build -t ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${env.BUILD_NUMBER} ."
+                    sh "docker build -t ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
                     echo "Build Docker image hoàn thành!"
                 }
-            } 
-        } 
+            }
+        }
         stage('Push to Harbor') {
             steps {
                 script {
                     echo "Đăng nhập vào Harbor..."
                     sh "docker login ${REGISTRY} -u admin -p Harbor12345"
                     echo "🚀 Push image lên Harbor..."
-                    sh "docker push ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${env.BUILD_NUMBER}"
-                    sh "docker tag ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${env.BUILD_NUMBER} ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:latest"
+                    sh "docker push ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+                    sh "docker tag ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${DOCKER_IMAGE_TAG} ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:latest"
                     sh "docker push ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:latest"
-                    echo "ush thành công!"
+                    echo "Push thành công!"
+                }
+            }
+        }
+        stage('Update Deployment Repo') {
+            steps {
+                script {
+                    echo "Clone repository deploy..."
+                    sh "rm -rf audio-web-deploy"
+                    sh "git clone ${DEPLOY_REPO}"
+                    dir("audio-web-deploy") {
+                        echo "Cập nhật tag mới trong values.yaml..."
+                        sh """
+                        sed -i 's|tag: .*|tag: "${DOCKER_IMAGE_TAG}"|' values.yaml
+                        git config --global user.email "jenkins@example.com"
+                        git config --global user.name "Jenkins"
+                        git add values.yaml
+                        git commit -m "Update image tag to ${DOCKER_IMAGE_TAG}"
+                        git push origin ${DEPLOY_BRANCH}
+                        """
+                    }
+                    echo "Cập nhật repo deploy thành công!"
                 }
             }
         }
@@ -80,7 +103,7 @@ pipeline {
             steps {
                 script {
                     echo "Dọn dẹp Docker image..."
-                    sh "docker rmi ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${env.BUILD_NUMBER} || true"
+                    sh "docker rmi ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${DOCKER_IMAGE_TAG} || true"
                     echo "Dọn dẹp hoàn tất!"
                 }
             }
@@ -88,7 +111,7 @@ pipeline {
     }
     post {
         success {
-            echo '🎉 Build và push lên Harbor thành công!'
+            echo '🎉 Build và push lên Harbor thành công! Repo deploy đã được cập nhật.'
         }
         failure {
             echo '❌ Build thất bại. Kiểm tra logs để xem chi tiết.'
