@@ -33,7 +33,7 @@ const Footer = () => {
         <div className='gap_3 footerSocals'>
             <div className='w_50 gap_3 boxColumn left'>
                 <p className='header_body opacity_50'>
-                 yeah yeah yeah 123456789
+                  123456789
                 </p>
                 <p className='text_body_white opacity_50 w_100'>
                     Copyright 2025. All Rights Reserved
