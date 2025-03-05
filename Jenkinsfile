@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         REGISTRY = 'localhost:80'
-        PROJECT = 'lab_audio_web'
+        PROJECT = 'lab-audio-web'
         IMAGE_NAME = 'audio-web'
         HARBOR_CREDS = 'harbor-credentials'
         DOCKER_IMAGE = ''
