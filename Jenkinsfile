@@ -88,8 +88,8 @@ pipeline {
                         echo "Cập nhật tag mới trong values.yaml..."
                         sh """
                         sed -i 's|tag: .*|tag: "${DOCKER_IMAGE_TAG}"|' values.yaml
-                        git config --global user.email "jenkins@example.com"
-                        git config --global user.name "Jenkins"
+                        git config --global user.email "bjornson25102003@gmail.com"
+                        git config --global user.name "tierik-bjornson"
                         git add values.yaml
                         git commit -m "Update image tag to ${DOCKER_IMAGE_TAG}"
                         git push origin ${DEPLOY_BRANCH}
