@@ -33,10 +33,10 @@ const Footer = () => {
         <div className='gap_3 footerSocals'>
             <div className='w_50 gap_3 boxColumn left'>
                 <p className='header_body opacity_50'>
-                    Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.
+                    jdkdsvksksjkfskjfkjsdfhksfkjsdfkjsd
                 </p>
                 <p className='text_body_white opacity_50 w_100'>
-                    Copyright 2021. All Rights Reserved
+                    Copyright 2025. All Rights Reserved
                 </p>
             </div>
             <div className='box_row gap_1 right w_50'>
