@@ -79,30 +79,23 @@ pipeline {
             }
         }
         stage('Update Deployment Repo') {
-             steps {
-                 script {
-                     echo "🔥 Clone repository deploy..."
-                     sh "rm -rf audio-web-deploy"
-                     sh "git clone ${DEPLOY_REPO} audio-web-deploy"
-
-                     dir("audio-web-deploy") {
-                        echo "🔄 Cập nhật tag mới trong values.yaml..."
+            steps {
+                script {
+                    echo "Clone repository deploy..."
+                    sh "rm -rf audio-web-deploy"
+                    sh "git clone ${DEPLOY_REPO}"
+                    dir("audio-web-deploy") {
+                        echo "Cập nhật tag mới trong values.yaml..."
                         sh """
                         sed -i 's|tag: .*|tag: "${DOCKER_IMAGE_TAG}"|' values.yaml
                         git config --global user.email "bjornson25102003@gmail.com"
                         git config --global user.name "tierik-bjornson"
                         git add values.yaml
-                        git commit -m "🚀 Update image tag to ${DOCKER_IMAGE_TAG}"
+                        git commit -m "Update image tag to ${DOCKER_IMAGE_TAG}"
+                        git push origin ${DEPLOY_BRANCH}
                         """
-                        def changes = sh(script: "git diff --name-only HEAD~1 HEAD", returnStdout: true).trim()
-                        if (changes) {
-                            echo "🛠️ Có thay đổi, tiến hành push..."
-                            sh "git push origin ${DEPLOY_BRANCH}"
-                        } else {
-                            echo "✅ Không có thay đổi nào, bỏ qua push."
-                        }
-                     }
-                     echo "🎉 Cập nhật repo deploy thành công!"
+                    }
+                    echo "Cập nhật repo deploy thành công!"
                 }
             }
         }
