@@ -7,7 +7,7 @@ const nav_list = [
   {id:1, name:"Home", navigate:"/"},
   {id:2, name"Headphones", navigate:"/HeadPhones"},
   {id:3, name:"Speak", navigate:"/Speakers"},
-  {id:4, name:"Earphones", navigate:"/EarPhones"},
+  {id:4, name:"Earphones", navigate:"/EarPhones"}
 ]
 
 const NavLinks = ({animation}) => {
