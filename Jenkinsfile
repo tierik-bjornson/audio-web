@@ -7,7 +7,7 @@ pipeline {
         REGISTRY = 'localhost:80'
         PROJECT = 'audio-ecomweb'
         IMAGE_NAME = 'audio-web-reactjs'
-        HARBOR_CREDS = 'harbor-cre'
+        HARBOR_CREDS = 'harbor-credentials'
         DEPLOY_REPO = 'https://github.com/tierik-bjornson/audio-web-deploy.git'
         DEPLOY_BRANCH = 'main'
         DOCKER_IMAGE_TAG = "${env.BUILD_NUMBER}"
