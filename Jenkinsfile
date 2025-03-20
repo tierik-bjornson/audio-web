@@ -5,9 +5,9 @@ pipeline {
     }
     environment {
         REGISTRY = 'localhost:80'
-        PROJECT = 'lab-audio-web'
-        IMAGE_NAME = 'audio-web'
-        HARBOR_CREDS = 'harbor-credentials'
+        PROJECT = 'audio-ecomweb'
+        IMAGE_NAME = 'audio-web-reactjs'
+        HARBOR_CREDS = 'harbor-cre'
         DEPLOY_REPO = 'https://github.com/tierik-bjornson/audio-web-deploy.git'
         DEPLOY_BRANCH = 'main'
         DOCKER_IMAGE_TAG = "${env.BUILD_NUMBER}"
