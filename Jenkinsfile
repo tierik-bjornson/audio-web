@@ -4,7 +4,7 @@ pipeline {
         nodejs "Node23"
     }
     environment {
-        REGISTRY = 'localhost:80'
+        REGISTRY = '10.8.0.2:80'
         PROJECT = 'audio-ecomweb'
         IMAGE_NAME = 'audio-web-reactjs'
         HARBOR_CREDS = 'harbor-credentials'
@@ -69,7 +69,9 @@ pipeline {
             steps {
                 script {
                     echo "Đăng nhập vào Harbor..."
-                    sh "docker login ${REGISTRY} -u admin -p Harbor12345"
+                    withCredentials([usernamePassword(credentialsId: "${HARBOR_CREDS}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                        sh "echo \$PASSWORD | docker login ${REGISTRY} -u \$USERNAME --password-stdin"
+                    }
                     echo "🚀 Push image lên Harbor..."
                     sh "docker push ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
                     sh "docker tag ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${DOCKER_IMAGE_TAG} ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:latest"
