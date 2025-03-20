@@ -16,7 +16,7 @@ pipeline {
         stage('Start') {
             steps {
                 script {
-                    echo "Pipeline bắt đầu chạy!"
+                    echo "Pipeline bắt đầu chạy!!!!"
                 }
             }
         }
