@@ -4,7 +4,7 @@ pipeline {
         nodejs "Node23"
     }
     environment {
-        REGISTRY = 'localhost:80'
+        REGISTRY = 'localhost:8089'
         PROJECT = 'audio-ecomweb'
         IMAGE_NAME = 'audio-web-reactjs'
         HARBOR_CREDS = 'harbor-cre'
