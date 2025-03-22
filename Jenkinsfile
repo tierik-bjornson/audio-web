@@ -84,7 +84,7 @@ pipeline {
                     echo "Clone repository deploy..."
                     sh "rm -rf audio-web-deploy"
                     sh "git clone ${DEPLOY_REPO}"
-                    dir("audio-web-deploy") {
+                    dir("audio-web-deploy/audio-web-deploy") {
                         echo "Cập nhật tag mới trong values.yaml..."
                         sh """
                         sed -i 's|tag: .*|tag: "${DOCKER_IMAGE_TAG}"|' values.yaml
