@@ -83,7 +83,10 @@ pipeline {
                 script {
                     echo "Clone repository deploy..."
                     sh "rm -rf audio-web-deploy"
-                    sh "git clone ${DEPLOY_REPO}"
+                    withCredentials([usernamePassword(credentialsId: 'githubtk', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
+                        sh "git clone https://${GIT_USER}:${GIT_PASS}@github.com/tierik-bjornson/audio-web-deploy.git"
+                    }
+                   
                     dir("audio-web-deploy/audio-web-deploy") {
                         echo "Cập nhật tag mới trong values.yaml..."
                         sh """
