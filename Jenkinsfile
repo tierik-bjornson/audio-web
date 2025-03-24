@@ -56,10 +56,11 @@ pipeline {
             echo "🔍 Đang phân tích code với SonarQube..."
             withSonarQubeEnv('SonarQube') {
                 sh '''
-                /opt/sonar-scanner/bin/sonar-scanner \
-                -Dsonar.projectKey=audio-web \
+                export PATH=$PATH:/opt/sonar-scanner/bin
+                sonar-scanner \
+                -Dsonar.projectKey=${SONARQUBE_PROJECT} \
                 -Dsonar.sources=. \
-                -Dsonar.host.url=http://localhost:9000 \
+                -Dsonar.host.url=http://10.8.0.2:9000 \
                 -Dsonar.login=${SONAR_TOKEN}
                 '''
             }
