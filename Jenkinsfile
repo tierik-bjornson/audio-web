@@ -2,7 +2,6 @@ pipeline {
     agent any
     tools {
         nodejs "Node23"
-        sonarQubeScanner 'Sonar7'
     }
     environment {
         REGISTRY = 'localhost:8089'
@@ -52,19 +51,21 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                echo "🔍 Đang phân tích code với SonarQube..."
-                withSonarQubeEnv('Sonar7') { 
-                    withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) { 
-                        sh '''
-                        sonar-scanner \
-                        -Dsonar.projectKey=${SONARQUBE_PROJECT} \
-                        -Dsonar.sources=. \
-                        -Dsonar.host.url=http://10.8.0.2:9000 \
-                        -Dsonar.login=${SONAR_TOKEN}
-                        '''
+                script {
+                    echo "🔍 Đang phân tích code với SonarQube..."
+                    withSonarQubeEnv(SONARQUBE_SERVER) {
+                        withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
+                            sh '''
+                            sonar-scanner \
+                            -Dsonar.projectKey=${SONARQUBE_PROJECT} \
+                            -Dsonar.sources=. \
+                            -Dsonar.host.url=http://10.8.0.2:9000 \
+                            -Dsonar.login=$SONAR_TOKEN
+                            '''
+                        }
                     }
+                    echo "✅ SonarQube scan hoàn tất!"
                 }
-                echo "✅ SonarQube scan hoàn tất!"
             }
         }
         stage('Test') {
