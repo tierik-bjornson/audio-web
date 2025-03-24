@@ -11,6 +11,8 @@ pipeline {
         DEPLOY_REPO = 'https://github.com/tierik-bjornson/audio-web-deploy.git'
         DEPLOY_BRANCH = 'main'
         DOCKER_IMAGE_TAG = "${env.BUILD_NUMBER}"
+        SONARQUBE_SERVER = 'SonarQube'   
+        SONARQUBE_PROJECT = 'audio-web'  
     }
     stages {
         stage('Start') {
@@ -44,6 +46,23 @@ pipeline {
                     echo "Bắt đầu build..."
                     sh 'npm run build'
                     echo "Build hoàn tất!"
+                }
+            }
+        }
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    echo "🔍 Đang phân tích code với SonarQube..."
+                    withSonarQubeEnv(SONARQUBE_SERVER) {
+                        sh '''
+                        sonar-scanner \
+                        -Dsonar.projectKey=${SONARQUBE_PROJECT} \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://10.8.0.2:9000 \
+                        -Dsonar.login=${SONAR_TOKEN}
+                        '''
+                    }
+                    echo "✅ SonarQube scan hoàn tất!"
                 }
             }
         }
