@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         nodejs "Node23"
+        sonarScanner 'SonarScanner'
     }
     environment {
         REGISTRY = 'localhost:8089'
