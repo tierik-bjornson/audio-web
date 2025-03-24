@@ -13,6 +13,7 @@ pipeline {
         DOCKER_IMAGE_TAG = "${env.BUILD_NUMBER}"
         SONARQUBE_SERVER = 'SonarQube'   
         SONARQUBE_PROJECT = 'audio-web'  
+        SONAR_TOKEN = credentials('sonarqube-token')
     }
     stages {
         stage('Start') {
@@ -52,18 +53,23 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    echo "🔍 Đang phân tích code với SonarQube..."
-                    withSonarQubeEnv(SONARQUBE_SERVER) {
-                        withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
-                            sh '''
-                            sonar-scanner -X \
-                            -Dsonar.projectKey=${SONARQUBE_PROJECT} \
-                            -Dsonar.sources=. \
-                            -Dsonar.host.url=http://10.8.0.2:9000 \
-                            -Dsonar.login=$SONAR_TOKEN
-                            '''
-                        }
+                    echo "🔍 Phân tích code với SonarQube..."
+                    withSonarQubeEnv('SonarQube') {
+                        sh '''
+                        sonar-scanner \
+                        -Dsonar.projectKey=${SONARQUBE_PROJECT} \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://10.8.0.2:9000 \
+                        -Dsonar.login=${SONAR_TOKEN} -X
+                        '''
                     }
+                    sleep(10) 
+                    sh '''
+                    if [ ! -f ".scannerwork/report-task.txt" ]; then
+                        echo "❌ SonarScanner thất bại, không tìm thấy report-task.txt"
+                        exit 1
+                    fi
+                    '''
                     echo "✅ SonarQube scan hoàn tất!"
                 }
             }
