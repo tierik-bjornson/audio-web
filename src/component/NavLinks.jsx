@@ -5,9 +5,9 @@ import { motion } from 'framer-motion'
 
 const nav_list = [
   {id:1, name:"Home", navigate:"/"},
-  {id:2, name:"HeadphonesPage", navigate:"/HeadPhones"},
-  {id:3, name:"SpeakersPage", navigate:"/Speakers"},
-  {id:4, name:"EarphonesPage", navigate:"/EarPhones"}
+  {id:2, name:"Headphones", navigate:"/HeadPhones"},
+  {id:3, name:"Speakers", navigate:"/Speakers"},
+  {id:4, name:"Earphones", navigate:"/EarPhones"}
 ]
 
 const NavLinks = ({animation}) => {
