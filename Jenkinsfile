@@ -59,7 +59,7 @@ pipeline {
                 /opt/sonar-scanner/bin/sonar-scanner \
                 -Dsonar.projectKey=audio-web \
                 -Dsonar.sources=. \
-                -Dsonar.host.url=http://10.8.0.2:9000 \
+                -Dsonar.host.url=http://localhost:9000 \
                 -Dsonar.login=${SONAR_TOKEN}
                 '''
             }
