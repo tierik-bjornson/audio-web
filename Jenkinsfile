@@ -19,7 +19,7 @@ pipeline {
         stage('Start') {
             steps {
                 script {
-                    echo "Pipeline bắt đầu chạy!!!!"
+                    echo "Pipeline bắt đầu chạy!"
                 }
             }
         }
@@ -51,25 +51,23 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
-    steps {
-        script {
-            echo "🔍 Đang phân tích code với SonarQube..."
-            withSonarQubeEnv('SonarQube') {
-                sh '''
-                export PATH=$PATH:/opt/sonar-scanner/bin
-                sonar-scanner \
-                -Dsonar.projectKey=${SONARQUBE_PROJECT} \
-                -Dsonar.sources=. \
-                -Dsonar.host.url=http://10.8.0.2:9000 \
-                -Dsonar.login=${SONAR_TOKEN}
-                '''
-            }
-            echo "✅ SonarQube scan hoàn tất!"
+            steps {
+                script {
+                    echo "Bắt đầu phân tích code với SonarQube..."
+                    withSonarQubeEnv('SonarQube') {
+                    sh '''
+                    export PATH=$PATH:/opt/sonar-scanner/bin
+                    sonar-scanner \
+                    -Dsonar.projectKey=${SONARQUBE_PROJECT} \
+                    -Dsonar.sources=. \
+                    -Dsonar.host.url=http://10.8.0.2:9000 \
+                    -Dsonar.login=${SONAR_TOKEN}
+                    '''
+                    }
+                    echo "SonarQube scan hoàn tất!"
+               }
+           }
         }
-    }
-}
-
-        
         stage('Test') {
             steps {
                 script {
@@ -82,7 +80,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    echo "⚡ Bắt đầu build Docker image..."
+                    echo "Bắt đầu build Docker image..."
                     sh "docker build -t ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
                     echo "Build Docker image hoàn thành!"
                 }
@@ -93,7 +91,7 @@ pipeline {
                 script {
                     echo "Đăng nhập vào Harbor..."
                     sh "docker login ${REGISTRY} -u admin -p Harbor12345"
-                    echo "🚀 Push image lên Harbor..."
+                    echo "Push image lên Harbor..."
                     sh "docker push ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
                     sh "docker tag ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:${DOCKER_IMAGE_TAG} ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:latest"
                     sh "docker push ${REGISTRY}/${PROJECT}/${IMAGE_NAME}:latest"
@@ -137,10 +135,10 @@ pipeline {
     }
     post {
         success {
-            echo '🎉 Build và push lên Harbor thành công! Repo deploy đã được cập nhật.'
+            echo 'Build và push lên Harbor thành công! Repo deploy đã được cập nhật.'
         }
         failure {
-            echo '❌ Build thất bại. Kiểm tra logs để xem chi tiết.'
+            echo 'Build thất bại. Kiểm tra logs để xem chi tiết.'
         }
     }
 }
